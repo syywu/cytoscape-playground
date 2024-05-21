@@ -5,13 +5,23 @@ var cy = (window.cy = cytoscape({
 
   style: [
     {
-      selector: "node",
-      css: {
+      selector: "node[label]",
+      style: {
+        content: "data(label)",
         shape: "ellipse",
-        content: "data(id)",
-        "text-valign": "center",
-        "text-halign": "center",
-        label: "data(id)",
+        width: 25,
+        height: 25,
+        "background-color": "grey",
+        "border-width": 0,
+        "border-color": undefined,
+      },
+    },
+    {
+      selector: "node:selected",
+      style: {
+        "overlay-opacity": 0.5,
+        "overlay-color": "orange",
+        "overlay-padding": "5%",
       },
     },
     {
@@ -25,7 +35,7 @@ var cy = (window.cy = cytoscape({
       },
     },
     {
-      selector: "node#e",
+      selector: "node#bsp",
       css: {
         "corner-radius": "10",
         padding: 5,
@@ -33,9 +43,40 @@ var cy = (window.cy = cytoscape({
     },
     {
       selector: "edge",
-      css: {
+      style: {
+        width: 2,
+        "line-color": "grey",
         "curve-style": "bezier",
-        "target-arrow-shape": "triangle",
+      },
+    },
+    {
+      selector: "edge:selected",
+      style: {
+        "line-color": "orange",
+        width: 2,
+        "curve-style": "bezier",
+        "overlay-opacity": 0.3,
+        "overlay-padding": "5px",
+        "overlay-color": "orange",
+      },
+    },
+    {
+      selector: "edge[label]",
+      style: {
+        content: "data(label)",
+        "font-size": "12px",
+        "text-background-opacity": 1,
+        "text-background-color": "white",
+        "text-background-padding": "3px",
+      },
+    },
+    {
+      selector: "node.tjunction",
+      style: {
+        shape: "ellipse",
+        "background-color": "black",
+        width: 10,
+        height: 10,
       },
     },
   ],
@@ -57,7 +98,7 @@ var cy = (window.cy = cytoscape({
 
   elements: {
     nodes: [
-      { data: { id: "A", label: "A" } },
+      { data: { id: "A", label: "A", class: "tjunction" } },
       { data: { id: "C", label: "C" } },
       { data: { id: "D", label: "D" } },
       { data: { id: "B", label: "B" } },
@@ -140,11 +181,21 @@ var cy = (window.cy = cytoscape({
 
 cy.on("tap", function (e) {
   if (e.target === cy) {
-    cy.add({
-      group: "nodes",
-      data: { weight: 75 },
-      position: { x: e.position.x, y: e.position.y },
-    });
+    if (e.target.length) {
+      e.target.json({ selected: false });
+      e.target;
+      cy.add({
+        group: "edges",
+        data: { weight: 75 },
+        position: { x: e.position.x, y: e.position.y },
+      });
+    } else {
+      cy.add({
+        group: "nodes",
+        data: { weight: 75 },
+        position: { x: e.position.x, y: e.position.y },
+      });
+    }
   } else {
     console.log("tapped on element");
   }
@@ -153,3 +204,24 @@ cy.on("tap", function (e) {
 cy.on("dblclick", function (e) {
   cy.remove(e.target);
 });
+
+// const handleDoubleClick = useCallback(
+//   (event: cytoscape.EventObject) => {
+//     if (event.target.length === undefined) {
+//       const coords = { x: event.position?.x, y: event.position?.y };
+//       handleAddNodeClick(coords);
+//     } else if (isTourActive) {
+//       return;
+//     } else {
+//       const element = event.target;
+//       element.json({ selected: false });
+//       const label = element.data(ELEMENT_DATA_LABEL);
+//       const type = element.data(ELEMENT_DATA_TYPE);
+//       const elementClasses = element.classes();
+//       const style = elementClasses
+//         ? elementClasses[elementClasses.length - 1]
+//         : DEFAULT_STYLE_DATA.style;
+//       const elementType: ElementType = getElementType(element, type);
+//       setElementData({ label, style });
+
+// );
