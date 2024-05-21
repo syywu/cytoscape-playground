@@ -149,3 +149,7 @@ cy.on("tap", function (e) {
     console.log("tapped on element");
   }
 });
+
+cy.on("dblclick", function (e) {
+  cy.remove(e.target);
+});
