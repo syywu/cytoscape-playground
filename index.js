@@ -138,6 +138,8 @@ var cy = (window.cy = cytoscape({
   },
 }));
 
+cy.data();
+
 // cy.nodes().on("click", function (e) {
 //   //   var clickedNode = e.target;
 //   cy.data();
