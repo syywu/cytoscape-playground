@@ -138,9 +138,14 @@ var cy = (window.cy = cytoscape({
   },
 }));
 
-cy.data();
-
-// cy.nodes().on("click", function (e) {
-//   //   var clickedNode = e.target;
-//   cy.data();
-// });
+cy.on("tap", function (e) {
+  if (e.target === cy) {
+    cy.add({
+      group: "nodes",
+      data: { weight: 75 },
+      position: { x: e.position.x, y: e.position.y },
+    });
+  } else {
+    console.log("tapped on element");
+  }
+});
