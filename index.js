@@ -1,3 +1,4 @@
+// document.addEventListener("DOMContentLoaded", function () {
 $.getJSON("input.json", function (data) {
   var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
@@ -37,7 +38,7 @@ $.getJSON("input.json", function (data) {
         },
       },
       {
-        selector: ":parent[bsp]",
+        selector: ":parent.bsp",
         css: {
           "corner-radius": "50",
           padding: 0,
@@ -73,7 +74,7 @@ $.getJSON("input.json", function (data) {
         },
       },
       {
-        selector: "node[tjunction]",
+        selector: "node.tjunction",
         style: {
           shape: "ellipse",
           "background-color": "black",
@@ -106,32 +107,34 @@ $.getJSON("input.json", function (data) {
     },
   }));
 
-  cy.on("tap", function (e) {
-    if (e.target === cy) {
-      if (e.target.length) {
-        e.target.json({ selected: false });
-        e.target;
-        cy.add({
-          group: "edges",
-          data: { weight: 75 },
-          position: { x: e.position.x, y: e.position.y },
-        });
-      } else {
-        cy.add({
-          group: "nodes",
-          data: { weight: 75 },
-          position: { x: e.position.x, y: e.position.y },
-        });
-      }
-    } else {
-      console.log("tapped on element");
-    }
-  });
+  // cy.on("dblclick", function (e) {
+  //   if (e.target === cy) {
+  //     if (e.target.length) {
+  //       e.target.json({ selected: false });
+  //       e.target;
+  //       cy.add({
+  //         group: "edges",
+  //         data: { weight: 75 },
+  //         position: { x: e.position.x, y: e.position.y },
+  //       });
+  //     } else {
+  //       cy.add({
+  //         group: "nodes",
+  //         data: { weight: 75 },
+  //         position: { x: e.position.x, y: e.position.y },
+  //       });
+  //     }
+  //   } else {
+  //     console.log("tapped on element");
+  //   }
+  // });
 
-  cy.on("dblclick", function (e) {
-    cy.remove(e.target);
-  });
+  //   cy.on("dblclick", function (e) {
+  //     cy.remove(e.target);
+  //   });
 });
+// });
+
 // const handleDoubleClick = useCallback(
 //   (event: cytoscape.EventObject) => {
 //     if (event.target.length === undefined) {

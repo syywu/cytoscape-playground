@@ -4,7 +4,8 @@
       "data": { "id": "A", "label": "A" }
     },
     {
-      "data": { "id": "C", "label": "C", "bsp": true }
+      "data": { "id": "C", "label": "C" },
+      "classes": "bsp"
     },
     {
       "data": { "id": "aa", "label": "aa", "parent": "A" }
@@ -13,7 +14,8 @@
       "data": { "id": "ca", "label": "ca", "parent": "C" }
     },
     {
-      "data": { "id": "D", "label": "D", "bsp": true }
+      "data": { "id": "D", "label": "D" },
+      "classes": "bsp"
     },
     {
       "data": { "id": "ab", "label": "ab", "parent": "A" }
@@ -28,7 +30,8 @@
       "data": { "id": "ac", "label": "ac", "parent": "A" }
     },
     {
-      "data": { "id": "ba", "label": "ba", "tjunction": true }
+      "data": { "id": "ba", "label": "ba" },
+      "classes": "tjunction"
     },
     {
       "data": { "id": "bb", "label": "bb", "parent": "B" }
