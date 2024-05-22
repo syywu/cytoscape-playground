@@ -10,8 +10,8 @@ $.getJSON("input.json", function (data) {
         style: {
           content: "data(label)",
           shape: "ellipse",
-          width: 25,
-          height: 25,
+          width: 20,
+          height: 20,
           "background-color": "grey",
           "border-width": 0,
           "border-color": undefined,
@@ -43,25 +43,6 @@ $.getJSON("input.json", function (data) {
           padding: 0,
         },
       },
-      //   {
-      //     selector: ":parent",
-      //     style: {
-      //       "text-valign": "top",
-      //       "text-halign": "center",
-      //       shape: "rectangle",
-      //       "background-color": "#d3d3d3",
-      //       padding: 10,
-      //     },
-      //   },
-      //   {
-      //     selector: ":parent[bsp]",
-      //     style: {
-      //       "background-color": "#c0c0c0",
-      //       shape: "round-rectangle",
-      //       "corner-radius": "20",
-      //       padding: 5,
-      //     },
-      //   },
       {
         selector: "edge",
         style: {
