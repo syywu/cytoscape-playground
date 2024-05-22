@@ -28,7 +28,7 @@
       "data": { "id": "ac", "label": "ac", "parent": "A" }
     },
     {
-      "data": { "id": "ba", "label": "ba" }
+      "data": { "id": "ba", "label": "ba", "tjunction": true }
     },
     {
       "data": { "id": "bb", "label": "bb", "parent": "B" }
@@ -47,6 +47,9 @@
     },
     {
       "data": { "id": "dc", "label": "dc", "parent": "D" }
+    },
+    {
+      "data": { "id": "az", "label": "az" }
     }
   ],
   "edges": [
@@ -85,10 +88,32 @@
     },
     {
       "data": {
+        "id": "B(ba)- Z(az)",
+        "source": "ba",
+        "target": "az",
+        "label": "B(ba)- Z(az)",
+        "operatingVoltage": "132",
+        "winterRating": "1",
+        "circuitLength": "1"
+      }
+    },
+    {
+      "data": {
         "id": "B(bb) - C(cb)",
         "source": "bb",
         "target": "cb",
         "label": "B(bb) - C(cb)",
+        "operatingVoltage": "132",
+        "winterRating": "2",
+        "circuitLength": "3"
+      }
+    },
+    {
+      "data": {
+        "id": "B(ba) - C(ca)",
+        "source": "ba",
+        "target": "ca",
+        "label": "B(ba) - C(ca)",
         "operatingVoltage": "132",
         "winterRating": "2",
         "circuitLength": "3"
