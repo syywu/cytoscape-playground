@@ -1,0 +1,120 @@
+{
+  "nodes": [
+    {
+      "data": { "id": "A", "label": "A" }
+    },
+    {
+      "data": { "id": "C", "label": "C", "bsp": true }
+    },
+    {
+      "data": { "id": "aa", "label": "aa", "parent": "A" }
+    },
+    {
+      "data": { "id": "ca", "label": "ca", "parent": "C" }
+    },
+    {
+      "data": { "id": "D", "label": "D", "bsp": true }
+    },
+    {
+      "data": { "id": "ab", "label": "ab", "parent": "A" }
+    },
+    {
+      "data": { "id": "da", "label": "da" }
+    },
+    {
+      "data": { "id": "B", "label": "B" }
+    },
+    {
+      "data": { "id": "ac", "label": "ac", "parent": "A" }
+    },
+    {
+      "data": { "id": "ba", "label": "ba" }
+    },
+    {
+      "data": { "id": "bb", "label": "bb", "parent": "B" }
+    },
+    {
+      "data": { "id": "cb", "label": "cb", "parent": "C" }
+    },
+    {
+      "data": { "id": "bc", "label": "bc", "parent": "B" }
+    },
+    {
+      "data": { "id": "db", "label": "db", "parent": "D" }
+    },
+    {
+      "data": { "id": "cc", "label": "cc", "parent": "C" }
+    },
+    {
+      "data": { "id": "dc", "label": "dc", "parent": "D" }
+    }
+  ],
+  "edges": [
+    {
+      "data": {
+        "id": "A(aa) - C(ca)",
+        "source": "aa",
+        "target": "ca",
+        "label": "A(aa) - C(ca)",
+        "operatingVoltage": "132",
+        "winterRating": "1",
+        "circuitLength": "2"
+      }
+    },
+    {
+      "data": {
+        "id": "A(ab) - D(da)",
+        "source": "ab",
+        "target": "da",
+        "label": "A(ab) - D(da)",
+        "operatingVoltage": "132",
+        "winterRating": "1",
+        "circuitLength": "3"
+      }
+    },
+    {
+      "data": {
+        "id": "A(ac) - B(ba)",
+        "source": "ac",
+        "target": "ba",
+        "label": "A(ac) - B(ba)",
+        "operatingVoltage": "132",
+        "winterRating": "1",
+        "circuitLength": "1"
+      }
+    },
+    {
+      "data": {
+        "id": "B(bb) - C(cb)",
+        "source": "bb",
+        "target": "cb",
+        "label": "B(bb) - C(cb)",
+        "operatingVoltage": "132",
+        "winterRating": "2",
+        "circuitLength": "3"
+      }
+    },
+    {
+      "data": {
+        "id": "B(bc) - D(db)",
+        "source": "bc",
+        "target": "db",
+        "label": "B(bc) - D(db)",
+        "operatingVoltage": "132",
+        "winterRating": "2",
+        "circuitLength": "1"
+      }
+    },
+    {
+      "data": {
+        "id": "C(cc) - D(dc)",
+        "source": "cc",
+        "target": "dc",
+        "label": "C(cc) - D(dc)",
+        "operatingVoltage": "132",
+        "winterRating": "2",
+        "circuitLength": "4"
+      }
+    }
+  ]
+}
