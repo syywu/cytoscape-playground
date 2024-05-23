@@ -13,9 +13,9 @@ body {
   }
 
   #button {
-    position: absolute;
+    position: absolute; 
     right: 0;
-    top: 0;
+    top: 0; 
     z-index: 99999;
     margin: 1em;
   }

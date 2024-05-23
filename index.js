@@ -37,7 +37,7 @@ $.getJSON("input.json", function (data) {
         },
       },
       {
-        selector: ":parent.bsp",
+        selector: "node.bsp",
         css: {
           "corner-radius": "50",
           padding: 0,

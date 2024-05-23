@@ -1,67 +1,194 @@
 {
   "nodes": [
     {
-      "data": { "id": "A", "label": "A" }
+      "data": {
+        "id": "Whitfield",
+        "label": "Whitfield"
+      },
+      "classes": "gsp",
+      "position": {}
     },
     {
-      "data": { "id": "C", "label": "C" },
-      "classes": "bsp"
+      "data": {
+        "id": "Hall Green",
+        "label": "Hall Green"
+      },
+      "classes": "gsp",
+      "position": {}
     },
     {
-      "data": { "id": "aa", "label": "aa", "parent": "A" }
+      "data": {
+        "id": "aa",
+        "label": "aa",
+        "parent": "Whitfield"
+      },
+      "position": {
+        "x": 100,
+        "y": 100
+      }
     },
     {
-      "data": { "id": "ca", "label": "ca", "parent": "C" }
+      "data": {
+        "id": "ca",
+        "label": "ca",
+        "parent": "Hall Green"
+      },
+      "position": {
+        "x": 200,
+        "y": 200
+      }
     },
     {
-      "data": { "id": "D", "label": "D" },
-      "classes": "bsp"
+      "data": {
+        "id": "ma",
+        "label": "ma"
+      },
+      "classes": "gsp",
+      "position": {}
     },
     {
-      "data": { "id": "ab", "label": "ab", "parent": "A" }
+      "data": {
+        "id": "ab",
+        "label": "ab",
+        "parent": "Whitfield"
+      },
+      "position": {
+        "x": 100,
+        "y": 100
+      }
     },
     {
-      "data": { "id": "da", "label": "da" }
+      "data": {
+        "id": "na",
+        "label": "na"
+      },
+      "classes": "tjunction",
+      "position": {}
     },
     {
-      "data": { "id": "B", "label": "B" }
+      "data": {
+        "id": "ac",
+        "label": "ac",
+        "parent": "Whitfield"
+      },
+      "position": {
+        "x": 100,
+        "y": 100
+      }
     },
     {
-      "data": { "id": "ac", "label": "ac", "parent": "A" }
+      "data": {
+        "id": "Burslem",
+        "label": "Burslem"
+      },
+      "classes": "gsp",
+      "position": {}
     },
     {
-      "data": { "id": "ba", "label": "ba" },
-      "classes": "tjunction"
+      "data": {
+        "id": "bb",
+        "label": "bb",
+        "parent": "Burslem"
+      },
+      "position": {
+        "x": 500,
+        "y": 500
+      }
     },
     {
-      "data": { "id": "bb", "label": "bb", "parent": "B" }
+      "data": {
+        "id": "cb",
+        "label": "cb",
+        "parent": "Hall Green"
+      },
+      "position": {
+        "x": 200,
+        "y": 200
+      }
     },
     {
-      "data": { "id": "cb", "label": "cb", "parent": "C" }
+      "data": {
+        "id": "Selly Oak",
+        "label": "Selly Oak"
+      },
+      "classes": "gsp",
+      "position": {}
     },
     {
-      "data": { "id": "bc", "label": "bc", "parent": "B" }
+      "data": {
+        "id": "bc",
+        "label": "bc",
+        "parent": "Burslem"
+      },
+      "position": {
+        "x": 500,
+        "y": 500
+      }
     },
     {
-      "data": { "id": "db", "label": "db", "parent": "D" }
+      "data": {
+        "id": "db",
+        "label": "db",
+        "parent": "Selly Oak"
+      },
+      "position": {
+        "x": 600,
+        "y": 600
+      }
     },
     {
-      "data": { "id": "cc", "label": "cc", "parent": "C" }
+      "data": {
+        "id": "cc",
+        "label": "cc",
+        "parent": "Hall Green"
+      },
+      "position": {
+        "x": 200,
+        "y": 200
+      }
     },
     {
-      "data": { "id": "dc", "label": "dc", "parent": "D" }
+      "data": {
+        "id": "dc",
+        "label": "dc",
+        "parent": "Selly Oak"
+      },
+      "position": {
+        "x": 600,
+        "y": 600
+      }
     },
     {
-      "data": { "id": "az", "label": "az" }
+      "data": {
+        "id": "t"
+      },
+      "classes": "tjunction",
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "mn",
+        "label": "mn"
+      },
+      "classes": "tjunction",
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "ml",
+        "label": "ml"
+      },
+      "classes": "tjunction",
+      "position": {}
     }
   ],
   "edges": [
     {
       "data": {
-        "id": "A(aa) - C(ca)",
+        "id": "Whitfield(aa)-Hall Green(ca)",
         "source": "aa",
         "target": "ca",
-        "label": "A(aa) - C(ca)",
+        "label": "132kV",
         "operatingVoltage": "132",
         "winterRating": "1",
         "circuitLength": "2"
@@ -69,21 +196,21 @@
     },
     {
       "data": {
-        "id": "A(ab) - D(da)",
+        "id": "Whitfield(ab)-ma(ma)",
         "source": "ab",
-        "target": "da",
-        "label": "A(ab) - D(da)",
+        "target": "ma",
+        "label": "132kV",
         "operatingVoltage": "132",
         "winterRating": "1",
-        "circuitLength": "3"
+        "circuitLength": "2"
       }
     },
     {
       "data": {
-        "id": "A(ac) - B(ba)",
+        "id": "Whitfield(ac)-na(na)",
         "source": "ac",
-        "target": "ba",
-        "label": "A(ac) - B(ba)",
+        "target": "na",
+        "label": "132kV",
         "operatingVoltage": "132",
         "winterRating": "1",
         "circuitLength": "1"
@@ -91,57 +218,57 @@
     },
     {
       "data": {
-        "id": "B(ba)- Z(az)",
-        "source": "ba",
-        "target": "az",
-        "label": "B(ba)- Z(az)",
-        "operatingVoltage": "132",
-        "winterRating": "1",
-        "circuitLength": "1"
-      }
-    },
-    {
-      "data": {
-        "id": "B(bb) - C(cb)",
+        "id": "Burslem(bb)-Hall Green(cb)",
         "source": "bb",
         "target": "cb",
-        "label": "B(bb) - C(cb)",
+        "label": "132kV",
         "operatingVoltage": "132",
-        "winterRating": "2",
-        "circuitLength": "3"
+        "winterRating": "1",
+        "circuitLength": "5"
       }
     },
     {
       "data": {
-        "id": "B(ba) - C(ca)",
-        "source": "ba",
-        "target": "ca",
-        "label": "B(ba) - C(ca)",
-        "operatingVoltage": "132",
-        "winterRating": "2",
-        "circuitLength": "3"
-      }
-    },
-    {
-      "data": {
-        "id": "B(bc) - D(db)",
+        "id": "Burslem(bc)-Selly Oak(db)",
         "source": "bc",
         "target": "db",
-        "label": "B(bc) - D(db)",
+        "label": "132kV",
         "operatingVoltage": "132",
         "winterRating": "2",
-        "circuitLength": "1"
+        "circuitLength": "3"
       }
     },
     {
       "data": {
-        "id": "C(cc) - D(dc)",
+        "id": "Hall Green(cc)-Selly Oak(dc)",
         "source": "cc",
         "target": "dc",
-        "label": "C(cc) - D(dc)",
+        "label": "132kV",
         "operatingVoltage": "132",
         "winterRating": "2",
         "circuitLength": "4"
+      }
+    },
+    {
+      "data": {
+        "id": "(ma)-mn(mn)",
+        "source": "ma",
+        "target": "mn",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "1",
+        "circuitLength": "1"
+      }
+    },
+    {
+      "data": {
+        "id": "(mn)-ml(ml)",
+        "source": "mn",
+        "target": "ml",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "2",
+        "circuitLength": "1"
       }
     }
   ]
