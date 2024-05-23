@@ -31,7 +31,7 @@ $.getJSON("input.json", function (data) {
           "text-valign": "top",
           "text-halign": "center",
           shape: "round-rectangle",
-          "background-color": "#d3d3d3",
+          "background-color": "#ADD8E6",
           "corner-radius": "0",
           padding: 10,
         },
@@ -39,6 +39,7 @@ $.getJSON("input.json", function (data) {
       {
         selector: "node.bsp",
         css: {
+          "background-color": "#D7D9AE",
           "corner-radius": "50",
           padding: 0,
         },

@@ -5,16 +5,16 @@
         "id": "Whitfield",
         "label": "Whitfield"
       },
-      "classes": "gsp",
-      "position": {}
+      "position": {},
+      "classes": "gsp"
     },
     {
       "data": {
         "id": "Hall Green",
         "label": "Hall Green"
       },
-      "classes": "gsp",
-      "position": {}
+      "position": {},
+      "classes": "bsp"
     },
     {
       "data": {
@@ -22,10 +22,7 @@
         "label": "aa",
         "parent": "Whitfield"
       },
-      "position": {
-        "x": 100,
-        "y": 100
-      }
+      "position": {}
     },
     {
       "data": {
@@ -33,18 +30,15 @@
         "label": "ca",
         "parent": "Hall Green"
       },
-      "position": {
-        "x": 200,
-        "y": 200
-      }
+      "position": {}
     },
     {
       "data": {
         "id": "ma",
         "label": "ma"
       },
-      "classes": "gsp",
-      "position": {}
+      "position": {},
+      "classes": "tjunction"
     },
     {
       "data": {
@@ -52,17 +46,6 @@
         "label": "ab",
         "parent": "Whitfield"
       },
-      "position": {
-        "x": 100,
-        "y": 100
-      }
-    },
-    {
-      "data": {
-        "id": "na",
-        "label": "na"
-      },
-      "classes": "tjunction",
       "position": {}
     },
     {
@@ -71,18 +54,15 @@
         "label": "ac",
         "parent": "Whitfield"
       },
-      "position": {
-        "x": 100,
-        "y": 100
-      }
+      "position": {}
     },
     {
       "data": {
         "id": "Burslem",
         "label": "Burslem"
       },
-      "classes": "gsp",
-      "position": {}
+      "position": {},
+      "classes": "gsp"
     },
     {
       "data": {
@@ -90,10 +70,7 @@
         "label": "bb",
         "parent": "Burslem"
       },
-      "position": {
-        "x": 500,
-        "y": 500
-      }
+      "position": {}
     },
     {
       "data": {
@@ -101,18 +78,15 @@
         "label": "cb",
         "parent": "Hall Green"
       },
-      "position": {
-        "x": 200,
-        "y": 200
-      }
+      "position": {}
     },
     {
       "data": {
         "id": "Selly Oak",
         "label": "Selly Oak"
       },
-      "classes": "gsp",
-      "position": {}
+      "position": {},
+      "classes": "bsp"
     },
     {
       "data": {
@@ -120,10 +94,7 @@
         "label": "bc",
         "parent": "Burslem"
       },
-      "position": {
-        "x": 500,
-        "y": 500
-      }
+      "position": {}
     },
     {
       "data": {
@@ -131,10 +102,7 @@
         "label": "db",
         "parent": "Selly Oak"
       },
-      "position": {
-        "x": 600,
-        "y": 600
-      }
+      "position": {}
     },
     {
       "data": {
@@ -142,10 +110,7 @@
         "label": "cc",
         "parent": "Hall Green"
       },
-      "position": {
-        "x": 200,
-        "y": 200
-      }
+      "position": {}
     },
     {
       "data": {
@@ -153,16 +118,6 @@
         "label": "dc",
         "parent": "Selly Oak"
       },
-      "position": {
-        "x": 600,
-        "y": 600
-      }
-    },
-    {
-      "data": {
-        "id": "t"
-      },
-      "classes": "tjunction",
       "position": {}
     },
     {
@@ -170,16 +125,16 @@
         "id": "mn",
         "label": "mn"
       },
-      "classes": "tjunction",
-      "position": {}
+      "position": {},
+      "classes": "tjunction"
     },
     {
       "data": {
         "id": "ml",
         "label": "ml"
       },
-      "classes": "tjunction",
-      "position": {}
+      "position": {},
+      "classes": "tjunction"
     }
   ],
   "edges": [
@@ -203,17 +158,6 @@
         "operatingVoltage": "132",
         "winterRating": "1",
         "circuitLength": "2"
-      }
-    },
-    {
-      "data": {
-        "id": "Whitfield(ac)-na(na)",
-        "source": "ac",
-        "target": "na",
-        "label": "132kV",
-        "operatingVoltage": "132",
-        "winterRating": "1",
-        "circuitLength": "1"
       }
     },
     {
