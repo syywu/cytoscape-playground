@@ -95,7 +95,6 @@ $.getJSON("input.json", function (data) {
   var eh = cy.edgehandles({ snap: false });
 
   document.querySelector("#draw-on").addEventListener("click", function () {
-    console.log("clicked");
     eh.enableDrawMode();
   });
 
@@ -106,10 +105,13 @@ $.getJSON("input.json", function (data) {
         data: { width: 20, height: 20 },
         position: { x: e.position.x, y: e.position.y },
       });
+      console.log(cy.elements().jsons());
     } else {
       console.log("tapped on element");
     }
   });
+
+  console.log(cy.elements().jsons());
 });
 
 //   cy.on("dblclick", function (e) {
