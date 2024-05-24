@@ -96,6 +96,18 @@ $.getJSON("input.json", function (data) {
 
   document.querySelector("#draw-on").addEventListener("click", function () {
     eh.enableDrawMode();
+    cy.on("ehcomplete", (event, sourceNode, targetNode) => {
+      let { position } = event;
+      console.log(
+        "Edge completed from",
+        sourceNode.id(),
+        "to",
+        targetNode.id(),
+        "at position",
+        position
+      );
+      console.log(cy.elements().jsons());
+    });
   });
 
   cy.on("dblclick", function (e) {
