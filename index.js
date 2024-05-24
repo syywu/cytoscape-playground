@@ -110,6 +110,10 @@ $.getJSON("input.json", function (data) {
     });
   });
 
+  document.querySelector("#draw-off").addEventListener("click", function () {
+    eh.disableDrawMode();
+  });
+
   cy.on("dblclick", function (e) {
     if (e.target === cy) {
       cy.add({
