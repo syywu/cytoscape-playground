@@ -5,7 +5,6 @@
         "id": "Whitfield",
         "label": "Whitfield"
       },
-      "position": {},
       "classes": "gsp"
     },
     {
@@ -13,7 +12,6 @@
         "id": "Hall Green",
         "label": "Hall Green"
       },
-      "position": {},
       "classes": "bsp"
     },
     {
@@ -21,23 +19,20 @@
         "id": "aa",
         "label": "aa",
         "parent": "Whitfield"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "ca",
         "label": "ca",
         "parent": "Hall Green"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "ma",
         "label": "ma"
       },
-      "position": {},
       "classes": "tjunction"
     },
     {
@@ -45,23 +40,20 @@
         "id": "ab",
         "label": "ab",
         "parent": "Whitfield"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "ac",
         "label": "ac",
         "parent": "Whitfield"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "Burslem",
         "label": "Burslem"
       },
-      "position": {},
       "classes": "gsp"
     },
     {
@@ -69,23 +61,20 @@
         "id": "bb",
         "label": "bb",
         "parent": "Burslem"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "cb",
         "label": "cb",
         "parent": "Hall Green"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "Selly Oak",
         "label": "Selly Oak"
       },
-      "position": {},
       "classes": "bsp"
     },
     {
@@ -93,39 +82,34 @@
         "id": "bc",
         "label": "bc",
         "parent": "Burslem"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "db",
         "label": "db",
         "parent": "Selly Oak"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "cc",
         "label": "cc",
         "parent": "Hall Green"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "dc",
         "label": "dc",
         "parent": "Selly Oak"
-      },
-      "position": {}
+      }
     },
     {
       "data": {
         "id": "mn",
         "label": "mn"
       },
-      "position": {},
       "classes": "tjunction"
     },
     {
@@ -133,7 +117,6 @@
         "id": "ml",
         "label": "ml"
       },
-      "position": {},
       "classes": "tjunction"
     }
   ],
