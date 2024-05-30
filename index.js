@@ -66,7 +66,15 @@ $.getJSON("graph.json", function (data) {
       {
         selector: "edge[label]",
         style: {
-          content: "data(label)",
+          content: function (ele) {
+            return (
+              ele.data("label") +
+              " - " +
+              ele.data("winterRating") +
+              " - " +
+              ele.data("circuitLength")
+            );
+          },
           "font-size": "12px",
           "text-background-opacity": 1,
           "text-background-color": "white",
