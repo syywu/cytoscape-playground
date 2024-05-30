@@ -1,0 +1,828 @@
+{
+  "nodes": [
+    {
+      "data": {
+        "id": "Ashburton Grid 33kV BSP",
+        "label": "Ashburton Grid 33kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "564f1f19-5fa7-464a-aace-94e7bf3f521f",
+        "label": "ASHB31",
+        "parent": "Ashburton Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Croydon B 33kV BSP",
+        "label": "Croydon B 33kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "30826042-5067-443b-b283-310eb881d6d6",
+        "label": "CRYB30",
+        "parent": "Croydon B 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP",
+        "label": "Beddington 132kV GSP"
+      },
+      "position": {},
+      "classes": "gsp"
+    },
+    {
+      "data": {
+        "id": "c5a92d1c-9b8b-4dd9-b372-9f9e6f2bcc21",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Beddington 11kV BSP",
+        "label": "Beddington 11kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "93000106-114c-4d7d-9043-281ad5d3557e",
+        "label": "BEDD1D",
+        "parent": "Beddington 11kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "4ea9e80b-eafe-4f83-9999-533df97f5a55",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Bridges Lane 11kV BSP",
+        "label": "Bridges Lane 11kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "a2251387-f958-43aa-a651-4045df7447c6",
+        "label": "BEDD1C",
+        "parent": "Bridges Lane 11kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "9da648d1-043f-49c1-abda-b2397a97f3eb",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "25df26e4-6967-40e7-bf6c-ff666a423e1f",
+        "label": "ASHB11",
+        "parent": "Ashburton Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "a9a55901-bf64-490a-9cda-94476aa033f9",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "a0355051-5b44-4a85-babe-208ba5ebddfd",
+        "label": "ASHB12",
+        "parent": "Ashburton Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "dd83183d-a0f3-47fe-ac43-d70bb5d38103",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Sutton Grid 132kV BSP",
+        "label": "Sutton Grid 132kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "d14d8125-3bf8-4a8f-890d-99156590660a",
+        "label": "SUTT11",
+        "parent": "Sutton Grid 132kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "0e10e20a-6a69-4ff0-95c4-a950063bc369",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "a1b889ec-7f62-42aa-963a-83461f1dc252",
+        "label": "SUTT12",
+        "parent": "Sutton Grid 132kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "e80efd82-3484-4a80-a595-0b5bb15cf3cc",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "1f3e8de1-1cee-4c8e-8b6f-3ea8b68428a8",
+        "label": "CRYB10"
+      },
+      "position": {},
+      "classes": "tjunction"
+    },
+    {
+      "data": {
+        "id": "4c91dd91-5892-428a-b6d2-17ad4605825a",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Croydon B 132kV GSP",
+        "label": "Croydon B 132kV GSP"
+      },
+      "position": {},
+      "classes": "gsp"
+    },
+    {
+      "data": {
+        "id": "02d15e3f-a332-47e6-ab4b-89b98a99e525",
+        "label": "CRYB11",
+        "parent": "Croydon B 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "8e654b0f-0e8e-4d1f-a40d-55e7710e1f9b",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Prologis 11kV BSP",
+        "label": "Prologis 11kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "ee2f729f-5d1b-4c3e-a6ae-0b28ac9d79e7",
+        "label": "PRLG11",
+        "parent": "Prologis 11kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "2a0ec260-512d-4dc9-8054-5c3ff9c2172f",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Croydon Grid 132kV",
+        "label": "Croydon Grid 132kV"
+      },
+      "position": {},
+      "classes": "gsp"
+    },
+    {
+      "data": {
+        "id": "406a98d9-c741-47b3-9db3-8fda02fe7953",
+        "label": "CROY11",
+        "parent": "Croydon Grid 132kV"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "0e61b474-a1dd-4bb8-a6b9-462b3ffc7584",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "ddba7e29-561e-4929-ad59-ec37da409abc",
+        "label": "CROY12",
+        "parent": "Croydon Grid 132kV"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "3ee48d63-526e-4ab0-a5ba-23a4c24a6da2",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Purley 132kV BSP",
+        "label": "Purley 132kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "916fab81-8ab4-4e14-9aec-e8640ac04b2c",
+        "label": "PURL11",
+        "parent": "Purley 132kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "3c1a60dc-417f-4be7-b050-437cdaa2a9bc",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "908096c0-cb2c-40c5-9438-efec5ba730a2",
+        "label": "PURL12",
+        "parent": "Purley 132kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "6a613abd-16a5-4528-b45f-cd728a66dce7",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Addington Grid 33kV BSP",
+        "label": "Addington Grid 33kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "e2f267b7-a0ca-4a6e-87e8-73db3cd7d82d",
+        "label": "ADDI1A",
+        "parent": "Addington Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "164abe8b-1870-49a7-a9a1-95aea6c09079",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "cfd35ceb-531c-421e-8215-07d66a4cc737",
+        "label": "ADDI1C",
+        "parent": "Addington Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "f8cdefc8-3885-4455-bb48-c55fb5c3c6c3",
+        "label": "BEDD1A",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "5d9d2a2a-c818-478d-9f5a-07a6aee85be1",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "8e4b3fd1-0795-46c4-a44e-0d42c5ece3c7",
+        "label": "BEDD12",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Beddington 33kV BSP",
+        "label": "Beddington 33kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "3171441b-f728-4844-a32d-4adafc31bcd6",
+        "label": "BEDD1B",
+        "parent": "Beddington 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "c864afad-e11f-48c3-8183-4cd901b692b7",
+        "label": "CRYB31",
+        "parent": "Croydon B 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Croydon Grid 33kV BSP",
+        "label": "Croydon Grid 33kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "62eac1c7-9db7-47fe-8a38-1f0f97478735",
+        "label": "CRYG31",
+        "parent": "Croydon Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "9579cc00-b62b-4bbb-b3d5-95c0e354afbd",
+        "label": "CRYB31",
+        "parent": "Croydon B 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "6936674b-0a45-44b3-9617-89fbabbc340f",
+        "label": "CRYG32",
+        "parent": "Croydon Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "4505eabb-acbe-484a-92f9-27e3c38ac1f3",
+        "label": "CRYB31",
+        "parent": "Croydon B 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "33d92418-0841-44cc-b688-6149b11a9bea",
+        "label": "CRYG33",
+        "parent": "Croydon Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "81f2c1b4-f1ef-4a8d-a975-4417b2a06439",
+        "label": "PRLG12",
+        "parent": "Prologis 11kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "571d615b-12e7-4715-a1d8-66f6d38ab70d",
+        "label": "BEDD11",
+        "parent": "Beddington 132kV GSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Purley Grid 33kV BSP",
+        "label": "Purley Grid 33kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "f77da918-b350-4306-ba24-7e4a3931a682",
+        "label": "PURL30",
+        "parent": "Purley Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "e1267e9b-efce-489a-8ea1-1adcabbf9a8c",
+        "label": "ADDI31",
+        "parent": "Addington Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "cf48994b-1a45-4e8f-b725-debdb6e0e8b2",
+        "label": "PURL30",
+        "parent": "Purley Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "da71c053-770e-43fb-8267-350cc5fb2be1",
+        "label": "ADDI31",
+        "parent": "Addington Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "Sutton Grid 33kV BSP",
+        "label": "Sutton Grid 33kV BSP"
+      },
+      "position": {},
+      "classes": "bsp"
+    },
+    {
+      "data": {
+        "id": "2f273550-3e84-41ce-8017-4de236d4ce81",
+        "label": "SUTT31",
+        "parent": "Sutton Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "d6177ccd-7f47-4c0a-9bf0-850b7a940adb",
+        "label": "BEDD30",
+        "parent": "Beddington 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "3c13d001-ad76-4050-b5a1-daaf9f5d2190",
+        "label": "SUTT31",
+        "parent": "Sutton Grid 33kV BSP"
+      },
+      "position": {}
+    },
+    {
+      "data": {
+        "id": "41a1545b-5be4-4777-99fc-2e5dac262903",
+        "label": "BEDD30",
+        "parent": "Beddington 33kV BSP"
+      },
+      "position": {}
+    }
+  ],
+  "edges": [
+    {
+      "data": {
+        "id": "Ashburton Grid 33kV BSP(ASHB31)-Croydon B 33kV BSP(CRYB30)",
+        "source": "564f1f19-5fa7-464a-aace-94e7bf3f521f",
+        "target": "30826042-5067-443b-b283-310eb881d6d6",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "99.4543573706049",
+        "circuitLength": "4.733"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-Beddington 11kV BSP(BEDD1D)",
+        "source": "c5a92d1c-9b8b-4dd9-b372-9f9e6f2bcc21",
+        "target": "93000106-114c-4d7d-9043-281ad5d3557e",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "212.397926430556",
+        "circuitLength": "0.810"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Bridges Lane 11kV BSP(BEDD1C)",
+        "source": "4ea9e80b-eafe-4f83-9999-533df97f5a55",
+        "target": "a2251387-f958-43aa-a651-4045df7447c6",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "212.397926430556",
+        "circuitLength": "0.360"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-Ashburton Grid 33kV BSP(ASHB11)",
+        "source": "9da648d1-043f-49c1-abda-b2397a97f3eb",
+        "target": "25df26e4-6967-40e7-bf6c-ff666a423e1f",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "128.947718521888",
+        "circuitLength": "5.733"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-Ashburton Grid 33kV BSP(ASHB12)",
+        "source": "a9a55901-bf64-490a-9cda-94476aa033f9",
+        "target": "a0355051-5b44-4a85-babe-208ba5ebddfd",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "128.947718521888",
+        "circuitLength": "5.731"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Sutton Grid 132kV BSP(SUTT11)",
+        "source": "dd83183d-a0f3-47fe-ac43-d70bb5d38103",
+        "target": "d14d8125-3bf8-4a8f-890d-99156590660a",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "145.180498690423",
+        "circuitLength": "6.100"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-Sutton Grid 132kV BSP(SUTT12)",
+        "source": "0e10e20a-6a69-4ff0-95c4-a950063bc369",
+        "target": "a1b889ec-7f62-42aa-963a-83461f1dc252",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "145.180498690423",
+        "circuitLength": "6.100"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-CRYB10(CRYB10)",
+        "source": "e80efd82-3484-4a80-a595-0b5bb15cf3cc",
+        "target": "1f3e8de1-1cee-4c8e-8b6f-3ea8b68428a8",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "130.319502761482",
+        "circuitLength": "0.730"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-Croydon B 132kV GSP(CRYB11)",
+        "source": "4c91dd91-5892-428a-b6d2-17ad4605825a",
+        "target": "02d15e3f-a332-47e6-ab4b-89b98a99e525",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "130.319502761482",
+        "circuitLength": "0.700"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Prologis 11kV BSP(PRLG11)",
+        "source": "8e654b0f-0e8e-4d1f-a40d-55e7710e1f9b",
+        "target": "ee2f729f-5d1b-4c3e-a6ae-0b28ac9d79e7",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "123.003320150311",
+        "circuitLength": "1.600"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Croydon Grid 132kV(CROY11)",
+        "source": "2a0ec260-512d-4dc9-8054-5c3ff9c2172f",
+        "target": "406a98d9-c741-47b3-9db3-8fda02fe7953",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "157.755187553373",
+        "circuitLength": "1.496"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Croydon Grid 132kV(CROY12)",
+        "source": "0e61b474-a1dd-4bb8-a6b9-462b3ffc7584",
+        "target": "ddba7e29-561e-4929-ad59-ec37da409abc",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "157.755187553373",
+        "circuitLength": "2.426"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-Purley 132kV BSP(PURL11)",
+        "source": "3ee48d63-526e-4ab0-a5ba-23a4c24a6da2",
+        "target": "916fab81-8ab4-4e14-9aec-e8640ac04b2c",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "160.041494619364",
+        "circuitLength": "4.878"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD11)-Purley 132kV BSP(PURL12)",
+        "source": "3c1a60dc-417f-4be7-b050-437cdaa2a9bc",
+        "target": "908096c0-cb2c-40c5-9438-efec5ba730a2",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "160.041494619364",
+        "circuitLength": "4.943"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Addington Grid 33kV BSP(ADDI1A)",
+        "source": "6a613abd-16a5-4528-b45f-cd728a66dce7",
+        "target": "e2f267b7-a0ca-4a6e-87e8-73db3cd7d82d",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "91.9095440528349",
+        "circuitLength": "6.012"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Addington Grid 33kV BSP(ADDI1C)",
+        "source": "164abe8b-1870-49a7-a9a1-95aea6c09079",
+        "target": "cfd35ceb-531c-421e-8215-07d66a4cc737",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "91.9095440528349",
+        "circuitLength": "6.497"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD1A)-Beddington 132kV GSP(BEDD11)",
+        "source": "f8cdefc8-3885-4455-bb48-c55fb5c3c6c3",
+        "target": "5d9d2a2a-c818-478d-9f5a-07a6aee85be1",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "208.739835124971",
+        "circuitLength": "0.170"
+      }
+    },
+    {
+      "data": {
+        "id": "Beddington 132kV GSP(BEDD12)-Beddington 33kV BSP(BEDD1B)",
+        "source": "8e4b3fd1-0795-46c4-a44e-0d42c5ece3c7",
+        "target": "3171441b-f728-4844-a32d-4adafc31bcd6",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "208.739835124971",
+        "circuitLength": "0.170"
+      }
+    },
+    {
+      "data": {
+        "id": "Croydon B 33kV BSP(CRYB31)-Croydon Grid 33kV BSP(CRYG31)",
+        "source": "c864afad-e11f-48c3-8183-4cd901b692b7",
+        "target": "62eac1c7-9db7-47fe-8a38-1f0f97478735",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "96.2535274782176",
+        "circuitLength": "1.400"
+      }
+    },
+    {
+      "data": {
+        "id": "Croydon B 33kV BSP(CRYB31)-Croydon Grid 33kV BSP(CRYG32)",
+        "source": "9579cc00-b62b-4bbb-b3d5-95c0e354afbd",
+        "target": "6936674b-0a45-44b3-9617-89fbabbc340f",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "160.270125325963",
+        "circuitLength": "1.250"
+      }
+    },
+    {
+      "data": {
+        "id": "Croydon B 33kV BSP(CRYB31)-Croydon Grid 33kV BSP(CRYG33)",
+        "source": "4505eabb-acbe-484a-92f9-27e3c38ac1f3",
+        "target": "33d92418-0841-44cc-b688-6149b11a9bea",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "160.270125325963",
+        "circuitLength": "1.250"
+      }
+    },
+    {
+      "data": {
+        "id": "Prologis 11kV BSP(PRLG12)-Beddington 132kV GSP(BEDD11)",
+        "source": "81f2c1b4-f1ef-4a8d-a975-4417b2a06439",
+        "target": "571d615b-12e7-4715-a1d8-66f6d38ab70d",
+        "label": "132kV",
+        "operatingVoltage": "132",
+        "winterRating": "123.003320150311",
+        "circuitLength": "1.665"
+      }
+    },
+    {
+      "data": {
+        "id": "Purley Grid 33kV BSP(PURL30)-Addington Grid 33kV BSP(ADDI31)",
+        "source": "f77da918-b350-4306-ba24-7e4a3931a682",
+        "target": "e1267e9b-efce-489a-8ea1-1adcabbf9a8c",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "219.485478335128",
+        "circuitLength": "7.400"
+      }
+    },
+    {
+      "data": {
+        "id": "Purley Grid 33kV BSP(PURL30)-Addington Grid 33kV BSP(ADDI31)",
+        "source": "cf48994b-1a45-4e8f-b725-debdb6e0e8b2",
+        "target": "da71c053-770e-43fb-8267-350cc5fb2be1",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "219.485478335128",
+        "circuitLength": "7.400"
+      }
+    },
+    {
+      "data": {
+        "id": "Sutton Grid 33kV BSP(SUTT31)-Beddington 33kV BSP(BEDD30)",
+        "source": "2f273550-3e84-41ce-8017-4de236d4ce81",
+        "target": "d6177ccd-7f47-4c0a-9bf0-850b7a940adb",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "99.4543573706049",
+        "circuitLength": "5.484"
+      }
+    },
+    {
+      "data": {
+        "id": "Sutton Grid 33kV BSP(SUTT31)-Beddington 33kV BSP(BEDD30)",
+        "source": "3c13d001-ad76-4050-b5a1-daaf9f5d2190",
+        "target": "41a1545b-5be4-4777-99fc-2e5dac262903",
+        "label": "33kV",
+        "operatingVoltage": "33",
+        "winterRating": "121.174274497519",
+        "circuitLength": "5.221"
+      }
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-$.getJSON("input.json", function (data) {
+$.getJSON("graph.json", function (data) {
   var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
 
@@ -114,6 +114,10 @@ $.getJSON("input.json", function (data) {
     eh.disableDrawMode();
   });
 
+  document.querySelector("#save").addEventListener("click", function () {
+    console.log(cy.elements().jsons());
+  });
+
   cy.on("dblclick", function (e) {
     if (e.target === cy) {
       cy.add({
@@ -126,8 +130,6 @@ $.getJSON("input.json", function (data) {
       console.log("tapped on element");
     }
   });
-
-  console.log(cy.elements().jsons());
 });
 
 //   cy.on("dblclick", function (e) {
