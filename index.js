@@ -14,7 +14,6 @@ $.getJSON("graph.json", function (data) {
           height: 20,
           "background-color": "grey",
           "border-width": 0,
-          "border-color": undefined,
         },
       },
       {
@@ -119,16 +118,8 @@ $.getJSON("graph.json", function (data) {
     });
   });
 
-  document.querySelector("#draw-off").addEventListener("click", function () {
-    eh.disableDrawMode();
-  });
-
-  document.querySelector("#save").addEventListener("click", function () {
-    console.log(cy.elements().jsons());
-  });
-
-  document.querySelector("#add-gsp").addEventListener("click", function () {
-    cy.on("dblclick", function (e) {
+  var addGsp = function () {
+    cy.on("tap", function (e) {
       if (e.target === cy) {
         cy.add({
           group: "nodes",
@@ -137,10 +128,11 @@ $.getJSON("graph.json", function (data) {
         });
       }
     });
-  });
+  };
+  document.querySelector("#add-gsp").addEventListener("click", addGsp);
 
-  document.querySelector("#add-bsp").addEventListener("click", function () {
-    cy.on("dblclick", function (e) {
+  var addBsp = function () {
+    cy.on("tap", function (e) {
       if (e.target === cy) {
         cy.add({
           group: "nodes",
@@ -149,6 +141,17 @@ $.getJSON("graph.json", function (data) {
         });
       }
     });
+  };
+  document.querySelector("#add-bsp").addEventListener("click", addBsp);
+
+  document.querySelector("#draw-off").addEventListener("click", function () {
+    cy.removeListener("tap");
+
+    eh.disableDrawMode();
+  });
+
+  document.querySelector("#save").addEventListener("click", function () {
+    console.log(cy.elements().jsons());
   });
 
   cy.on("dblclick", function (e) {
