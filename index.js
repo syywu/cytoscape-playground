@@ -26,7 +26,7 @@ $.getJSON("graph.json", function (data) {
         },
       },
       {
-        selector: ":parent",
+        selector: "node.gsp",
         css: {
           "text-valign": "top",
           "text-halign": "center",
@@ -39,6 +39,7 @@ $.getJSON("graph.json", function (data) {
       {
         selector: "node.bsp",
         css: {
+          shape: "round-rectangle",
           "background-color": "#D7D9AE",
           "corner-radius": "50",
           padding: 20,
@@ -124,6 +125,30 @@ $.getJSON("graph.json", function (data) {
 
   document.querySelector("#save").addEventListener("click", function () {
     console.log(cy.elements().jsons());
+  });
+
+  document.querySelector("#add-gsp").addEventListener("click", function () {
+    cy.on("dblclick", function (e) {
+      if (e.target === cy) {
+        cy.add({
+          group: "nodes",
+          classes: "gsp",
+          position: { x: e.position.x, y: e.position.y },
+        });
+      }
+    });
+  });
+
+  document.querySelector("#add-bsp").addEventListener("click", function () {
+    cy.on("dblclick", function (e) {
+      if (e.target === cy) {
+        cy.add({
+          group: "nodes",
+          classes: "bsp",
+          position: { x: e.position.x, y: e.position.y },
+        });
+      }
+    });
   });
 
   cy.on("dblclick", function (e) {
