@@ -146,7 +146,6 @@ $.getJSON("graph.json", function (data) {
 
   document.querySelector("#draw-off").addEventListener("click", function () {
     cy.removeListener("tap");
-
     eh.disableDrawMode();
   });
 
