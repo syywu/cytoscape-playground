@@ -161,14 +161,8 @@ $.getJSON("graph.json", function (data) {
         data: { width: 20, height: 20 },
         position: { x: e.position.x, y: e.position.y },
       });
-      console.log(cy.elements().jsons());
     } else {
-      console.log("tapped on element");
+      cy.remove(e.target);
     }
   });
 });
-
-//   cy.on("dblclick", function (e) {
-//     cy.remove(e.target);
-//   });
-// });
