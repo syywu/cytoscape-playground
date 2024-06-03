@@ -42,6 +42,8 @@ $.getJSON("graph.json", function (data) {
           "background-color": "#D7D9AE",
           "corner-radius": "50",
           padding: 20,
+          width: 70,
+          height: 70,
         },
       },
       {
