@@ -118,6 +118,7 @@ $.getJSON("graph.json", function (data) {
     });
   });
 
+  // TODO: add labels and metadata to newly added nodes
   var addGsp = function () {
     cy.on("tap", function (e) {
       if (e.target === cy) {
@@ -162,15 +163,15 @@ $.getJSON("graph.json", function (data) {
     console.log(cy.elements().jsons());
   });
 
-  cy.on("dblclick", function (e) {
-    if (e.target === cy) {
-      cy.add({
-        group: "nodes",
-        data: { width: 20, height: 20 },
-        position: { x: e.position.x, y: e.position.y },
-      });
-    } else {
-      //  edit functionality
-    }
+  document.querySelector("#add-node").addEventListener("click", function () {
+    cy.on("dblclick", function (e) {
+      if (e.target === cy) {
+        cy.add({
+          group: "nodes",
+          data: { width: 20, height: 20 },
+          position: { x: e.position.x, y: e.position.y },
+        });
+      }
+    });
   });
 });
