@@ -9,7 +9,7 @@ $.getJSON("graph.json", function (data) {
         selector: "node[label]",
         style: {
           content: "data(label)",
-          shape: "ellipse",
+          shape: "diamond",
           width: 20,
           height: 20,
           "background-color": "grey",
@@ -145,8 +145,17 @@ $.getJSON("graph.json", function (data) {
   document.querySelector("#add-bsp").addEventListener("click", addBsp);
 
   document.querySelector("#draw-off").addEventListener("click", function () {
-    cy.removeListener("tap");
+    // cy.removeListener("tap");
+    cy.removeAllListeners();
     eh.disableDrawMode();
+  });
+
+  document.querySelector("#delete").addEventListener("click", function (e) {
+    cy.on("dblclick", function (e) {
+      if (e.target !== cy) {
+        cy.remove(e.target);
+      }
+    });
   });
 
   document.querySelector("#save").addEventListener("click", function () {
@@ -161,7 +170,7 @@ $.getJSON("graph.json", function (data) {
         position: { x: e.position.x, y: e.position.y },
       });
     } else {
-      cy.remove(e.target);
+      //  edit functionality
     }
   });
 });
