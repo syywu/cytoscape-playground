@@ -120,16 +120,25 @@ $.getJSON("graph.json", function (data) {
     });
   });
 
-  // TODO: add labels and metadata to newly added nodes
   var addGsp = function () {
-    cy.on("tap", function (e) {
-      if (e.target === cy) {
-        cy.add({
-          group: "nodes",
-          classes: "gsp",
-          position: { x: e.position.x, y: e.position.y },
-        });
-      }
+    document.getElementById("label-form").style.display = "block";
+
+    let form = document.getElementById("label-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      cy.on("tap", function (e) {
+        if (e.target === cy) {
+          cy.add({
+            group: "nodes",
+            data: { label: document.getElementById("label").value },
+            classes: "gsp",
+            position: { x: e.position.x, y: e.position.y },
+          });
+        }
+      });
+
+      document.getElementById("label-form").style.display = "none";
     });
   };
   document.querySelector("#add-gsp").addEventListener("click", addGsp);
@@ -183,7 +192,7 @@ $.getJSON("graph.json", function (data) {
     let form = document.getElementById("label-form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      
+
       cy.on("dblclick", function (e) {
         if (e.target !== cy) {
           cy.$(e.target).data("label", document.getElementById("label").value);
