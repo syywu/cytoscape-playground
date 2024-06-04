@@ -144,14 +144,24 @@ $.getJSON("graph.json", function (data) {
   document.querySelector("#add-gsp").addEventListener("click", addGsp);
 
   var addBsp = function () {
-    cy.on("tap", function (e) {
-      if (e.target === cy) {
-        cy.add({
-          group: "nodes",
-          classes: "bsp",
-          position: { x: e.position.x, y: e.position.y },
-        });
-      }
+    document.getElementById("label-form").style.display = "block";
+
+    let form = document.getElementById("label-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      cy.on("tap", function (e) {
+        if (e.target === cy) {
+          cy.add({
+            group: "nodes",
+            data: { label: document.getElementById("label").value },
+            classes: "bsp",
+            position: { x: e.position.x, y: e.position.y },
+          });
+        }
+      });
+
+      document.getElementById("label-form").style.display = "none";
     });
   };
   document.querySelector("#add-bsp").addEventListener("click", addBsp);
