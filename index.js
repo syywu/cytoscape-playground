@@ -176,4 +176,23 @@ $.getJSON("graph.json", function (data) {
       }
     });
   });
+
+  var showForm = function () {
+    document.getElementById("label-form").style.display = "block";
+
+    let form = document.getElementById("label-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      
+      cy.on("dblclick", function (e) {
+        if (e.target !== cy) {
+          cy.$(e.target).data("label", document.getElementById("label").value);
+        }
+      });
+
+      document.getElementById("label-form").style.display = "none";
+    });
+  };
+
+  document.querySelector("#edit").addEventListener("click", showForm);
 });
