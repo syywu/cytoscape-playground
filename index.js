@@ -1,4 +1,6 @@
-$.getJSON("graph.json", function (data) {
+let json = "graph.json";
+
+$.getJSON(json, function (data) {
   var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
 
@@ -121,9 +123,9 @@ $.getJSON("graph.json", function (data) {
   });
 
   var addGsp = function () {
-    document.getElementById("label-form").style.display = "block";
+    document.getElementById("gsp-form").style.display = "block";
 
-    let form = document.getElementById("label-form");
+    let form = document.getElementById("gsp-form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -131,22 +133,22 @@ $.getJSON("graph.json", function (data) {
         if (e.target === cy) {
           cy.add({
             group: "nodes",
-            data: { label: document.getElementById("label").value },
+            data: { label: document.getElementById("gsp-label").value },
             classes: "gsp",
             position: { x: e.position.x, y: e.position.y },
           });
         }
       });
 
-      document.getElementById("label-form").style.display = "none";
+      document.getElementById("gsp-form").style.display = "none";
     });
   };
   document.querySelector("#add-gsp").addEventListener("click", addGsp);
 
   var addBsp = function () {
-    document.getElementById("label-form").style.display = "block";
+    document.getElementById("bsp-form").style.display = "block";
 
-    let form = document.getElementById("label-form");
+    let form = document.getElementById("bsp-form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -154,14 +156,14 @@ $.getJSON("graph.json", function (data) {
         if (e.target === cy) {
           cy.add({
             group: "nodes",
-            data: { label: document.getElementById("label").value },
+            data: { label: document.getElementById("bsp-label").value },
             classes: "bsp",
             position: { x: e.position.x, y: e.position.y },
           });
         }
       });
 
-      document.getElementById("label-form").style.display = "none";
+      document.getElementById("bsp-form").style.display = "none";
     });
   };
   document.querySelector("#add-bsp").addEventListener("click", addBsp);
@@ -185,9 +187,9 @@ $.getJSON("graph.json", function (data) {
   });
 
   document.querySelector("#add-node").addEventListener("click", function () {
-    document.getElementById("label-form").style.display = "block";
+    let form = document.getElementById("node-form");
+    form.style.display = "block";
 
-    let form = document.getElementById("label-form");
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -196,14 +198,14 @@ $.getJSON("graph.json", function (data) {
           cy.add({
             group: "nodes",
             data: {
-              label: document.getElementById("label").value,
+              label: document.getElementById("node-label").value,
             },
             position: { x: e.position.x, y: e.position.y },
           });
         }
       });
 
-      document.getElementById("label-form").style.display = "none";
+      form.style.display = "none";
     });
   });
 
