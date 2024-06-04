@@ -185,14 +185,25 @@ $.getJSON("graph.json", function (data) {
   });
 
   document.querySelector("#add-node").addEventListener("click", function () {
-    cy.on("dblclick", function (e) {
-      if (e.target === cy) {
-        cy.add({
-          group: "nodes",
-          data: { width: 20, height: 20 },
-          position: { x: e.position.x, y: e.position.y },
-        });
-      }
+    document.getElementById("label-form").style.display = "block";
+
+    let form = document.getElementById("label-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      cy.on("tap", function (e) {
+        if (e.target === cy) {
+          cy.add({
+            group: "nodes",
+            data: {
+              label: document.getElementById("label").value,
+            },
+            position: { x: e.position.x, y: e.position.y },
+          });
+        }
+      });
+
+      document.getElementById("label-form").style.display = "none";
     });
   });
 
