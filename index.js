@@ -123,9 +123,9 @@ $.getJSON(json, function (data) {
   });
 
   var addGsp = function () {
-    document.getElementById("gsp-form").style.display = "block";
-
     let form = document.getElementById("gsp-form");
+    form.style.display = "block";
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -140,15 +140,15 @@ $.getJSON(json, function (data) {
         }
       });
 
-      document.getElementById("gsp-form").style.display = "none";
+      form.style.display = "none";
     });
   };
   document.querySelector("#add-gsp").addEventListener("click", addGsp);
 
   var addBsp = function () {
-    document.getElementById("bsp-form").style.display = "block";
-
     let form = document.getElementById("bsp-form");
+    form.style.display = "block";
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -163,7 +163,7 @@ $.getJSON(json, function (data) {
         }
       });
 
-      document.getElementById("bsp-form").style.display = "none";
+      form.style.display = "none";
     });
   };
   document.querySelector("#add-bsp").addEventListener("click", addBsp);
@@ -210,9 +210,9 @@ $.getJSON(json, function (data) {
   });
 
   var showForm = function () {
-    document.getElementById("label-form").style.display = "block";
-
     let form = document.getElementById("label-form");
+    form.style.display = "block";
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
@@ -222,7 +222,7 @@ $.getJSON(json, function (data) {
         }
       });
 
-      document.getElementById("label-form").style.display = "none";
+      form.style.display = "none";
     });
   };
 
