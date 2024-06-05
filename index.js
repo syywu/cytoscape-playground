@@ -209,7 +209,7 @@ $.getJSON(json, function (data) {
     });
   });
 
-  var showForm = function () {
+  var editLabel = function () {
     let form = document.getElementById("label-form");
     form.style.display = "block";
 
@@ -226,5 +226,5 @@ $.getJSON(json, function (data) {
     });
   };
 
-  document.querySelector("#edit").addEventListener("click", showForm);
+  document.querySelector("#edit").addEventListener("click", editLabel);
 });
