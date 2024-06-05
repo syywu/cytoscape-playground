@@ -1,3 +1,4 @@
+// TODO: remove global variable
 let json = "graph.json";
 
 $.getJSON(json, function (data) {
@@ -122,23 +123,33 @@ $.getJSON(json, function (data) {
     });
   });
 
+  document.querySelector("#draw-off").addEventListener("click", function () {
+    eh.disableDrawMode();
+  });
+
   var addGsp = function () {
     let form = document.getElementById("gsp-form");
     form.style.display = "block";
 
+    var tapHandler = function (e) {
+      if (e.target === cy) {
+        cy.add({
+          group: "nodes",
+          data: { label: document.getElementById("gsp-label").value },
+          classes: "gsp",
+          position: { x: e.position.x, y: e.position.y },
+        });
+
+        cy.removeListener("tap", tapHandler);
+        tapHandler = null;
+        document.getElementById("gsp-label").value = "";
+      }
+    };
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      cy.on("tap", function (e) {
-        if (e.target === cy) {
-          cy.add({
-            group: "nodes",
-            data: { label: document.getElementById("gsp-label").value },
-            classes: "gsp",
-            position: { x: e.position.x, y: e.position.y },
-          });
-        }
-      });
+      cy.on("tap", tapHandler);
 
       form.style.display = "none";
     });
@@ -149,30 +160,30 @@ $.getJSON(json, function (data) {
     let form = document.getElementById("bsp-form");
     form.style.display = "block";
 
+    let tapHandler = function (e) {
+      if (e.target === cy) {
+        cy.add({
+          group: "nodes",
+          data: { label: document.getElementById("bsp-label").value },
+          classes: "bsp",
+          position: { x: e.position.x, y: e.position.y },
+        });
+
+        cy.removeListener("tap", tapHandler);
+        tapHandler = null;
+        document.getElementById("bsp-label").value = "";
+      }
+    };
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      cy.on("tap", function (e) {
-        if (e.target === cy) {
-          cy.add({
-            group: "nodes",
-            data: { label: document.getElementById("bsp-label").value },
-            classes: "bsp",
-            position: { x: e.position.x, y: e.position.y },
-          });
-        }
-      });
+      cy.on("tap", tapHandler);
 
       form.style.display = "none";
     });
   };
   document.querySelector("#add-bsp").addEventListener("click", addBsp);
-
-  document.querySelector("#draw-off").addEventListener("click", function () {
-    // cy.removeListener("tap");
-    cy.removeAllListeners();
-    eh.disableDrawMode();
-  });
 
   document.querySelector("#delete").addEventListener("click", function (e) {
     cy.on("dblclick", function (e) {
@@ -190,20 +201,26 @@ $.getJSON(json, function (data) {
     let form = document.getElementById("node-form");
     form.style.display = "block";
 
+    let tapHandler = function (e) {
+      if (e.target === cy) {
+        cy.add({
+          group: "nodes",
+          data: {
+            label: document.getElementById("node-label").value,
+          },
+          position: { x: e.position.x, y: e.position.y },
+        });
+
+        cy.removeListener("tap", tapHandler);
+        tapHandler = null;
+        document.getElementById("node-label").value = "";
+      }
+    };
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      cy.on("tap", function (e) {
-        if (e.target === cy) {
-          cy.add({
-            group: "nodes",
-            data: {
-              label: document.getElementById("node-label").value,
-            },
-            position: { x: e.position.x, y: e.position.y },
-          });
-        }
-      });
+      cy.on("tap", tapHandler);
 
       form.style.display = "none";
     });
@@ -213,14 +230,17 @@ $.getJSON(json, function (data) {
     let form = document.getElementById("label-form");
     form.style.display = "block";
 
+    let editHandler = function (e) {
+      if (e.target !== cy) {
+        cy.$(e.target).data("label", document.getElementById("label").value);
+      }
+    };
+    document.getElementById("label").value = "";
+
     form.addEventListener("submit", (e) => {
       e.preventDefault();
 
-      cy.on("dblclick", function (e) {
-        if (e.target !== cy) {
-          cy.$(e.target).data("label", document.getElementById("label").value);
-        }
-      });
+      cy.on("dblclick", editHandler);
 
       form.style.display = "none";
     });
