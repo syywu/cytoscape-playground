@@ -233,9 +233,11 @@ $.getJSON(json, function (data) {
     let editHandler = function (e) {
       if (e.target !== cy) {
         cy.$(e.target).data("label", document.getElementById("label").value);
+        cy.removeListener("dblclick", editHandler);
+        editHandler = null;
+        document.getElementById("label").value = "";
       }
     };
-    document.getElementById("label").value = "";
 
     form.addEventListener("submit", (e) => {
       e.preventDefault();
