@@ -1,7 +1,8 @@
-// TODO: remove global variable
-let json = "graph.json";
+function getJsonFileName() {
+  return "graph.json";
+}
 
-$.getJSON(json, function (data) {
+$.getJSON(getJsonFileName(), function (data) {
   var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
 
