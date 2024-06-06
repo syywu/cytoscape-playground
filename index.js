@@ -185,18 +185,6 @@ $.getJSON(json, function (data) {
   };
   document.querySelector("#add-bsp").addEventListener("click", addBsp);
 
-  document.querySelector("#delete").addEventListener("click", function (e) {
-    cy.on("dblclick", function (e) {
-      if (e.target !== cy) {
-        cy.remove(e.target);
-      }
-    });
-  });
-
-  document.querySelector("#save").addEventListener("click", function () {
-    console.log(cy.elements().jsons());
-  });
-
   document.querySelector("#add-node").addEventListener("click", function () {
     let form = document.getElementById("node-form");
     form.style.display = "block";
@@ -247,6 +235,17 @@ $.getJSON(json, function (data) {
       form.style.display = "none";
     });
   };
-
   document.querySelector("#edit").addEventListener("click", editLabel);
+
+  document.querySelector("#save").addEventListener("click", function () {
+    console.log(cy.elements().jsons());
+  });
+
+  document.querySelector("#delete").addEventListener("click", function (e) {
+    cy.on("dblclick", function (e) {
+      if (e.target !== cy) {
+        cy.remove(e.target);
+      }
+    });
+  });
 });
