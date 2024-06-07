@@ -2,6 +2,60 @@ function getJsonFileName() {
   return "graph.json";
 }
 
+async function getJsonData() {
+  let json = await constructFilteredJson(["West Weybridge", "Beddington"]);
+  console.log(json.edges, "json");
+  return json;
+}
+
+async function fetchJSONData() {
+  try {
+    const res = await fetch("./ukpn-south-eastern.json");
+    if (!res.ok) {
+      throw new Error(`HTTP error! Status: ${res.status}`);
+    }
+    const data = await res.json();
+    console.log(data);
+    return data;
+  } catch (error) {
+    console.error("Unable to fetch data:", error);
+  }
+}
+
+async function getGspNames() {
+  const gspNames = [];
+  const json = await fetchJSONData();
+  for (node of json.nodes) {
+    if (node.classes === "gsp") {
+      gspNames.push(node.data.label);
+    }
+  }
+  return gspNames;
+}
+
+async function constructFilteredJson(selectedGspNames) {
+  filteredJson = {};
+  filteredJson["nodes"] = [];
+  filteredJson["edges"] = [];
+
+  const json = await fetchJSONData();
+  if (json && json.nodes && json.edges) {
+    for (node of json.nodes) {
+      if (node.data.gspArea && selectedGspNames.includes(node.data.gspArea)) {
+        filteredJson["nodes"].push(node);
+      }
+    }
+
+    for (edge of json.edges) {
+      if (edge.data.gspArea && selectedGspNames.includes(edge.data.gspArea)) {
+        filteredJson["edges"].push(edge);
+      }
+    }
+  }
+
+  return filteredJson;
+}
+
 $.getJSON(getJsonFileName(), function (data) {
   var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
@@ -98,7 +152,7 @@ $.getJSON(getJsonFileName(), function (data) {
       },
     ],
 
-    elements: data,
+    elements: getJsonData(),
 
     layout: {
       name: "fcose",
@@ -249,4 +303,9 @@ $.getJSON(getJsonFileName(), function (data) {
       }
     });
   });
+
+  let gspNames = getGspNames().then((names) => {
+    return names;
+  });
+  console.log(gspNames);
 });
