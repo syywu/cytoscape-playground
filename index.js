@@ -92,56 +92,36 @@ $.getJSON(getJsonFileName(), function (data) {
           "text-valign": "top",
           "text-halign": "center",
           shape: "round-rectangle",
-          "background-color": "#ADD8E6",
+          "background-color": function (ele) {
+            return ele.data("voltage") == "132"
+              ? "#FA8072"
+              : ele.data("voltage") == "33"
+              ? "#D7D9AE"
+              : ele.data("voltage") == "11"
+              ? "#FFBF00"
+              : "#ADD8E6";
+          },
           "corner-radius": "0",
           padding: 50,
-        },
-      },
-      {
-        selector: 'node.gsp[voltage="132"]',
-        css: {
-          "background-color": "#FA8072",
-        },
-      },
-      {
-        selector: 'node.gsp[voltage="33"]',
-        css: {
-          "background-color": "#D7D9AE",
-        },
-      },
-      {
-        selector: 'node.gsp[voltage="11"]',
-        css: {
-          "background-color": "#FFBF00",
         },
       },
       {
         selector: "node.bsp",
         css: {
           shape: "round-rectangle",
-          "background-color": "#ADD8E6",
+          "background-color": function (ele) {
+            return ele.data("voltage") == "132"
+              ? "#FA8072"
+              : ele.data("voltage") == "33"
+              ? "#D7D9AE"
+              : ele.data("voltage") == "11"
+              ? "#FFBF00"
+              : "#ADD8E6";
+          },
           "corner-radius": "50",
           padding: 20,
           width: 70,
           height: 70,
-        },
-      },
-      {
-        selector: 'node.bsp[voltage="132"]',
-        css: {
-          "background-color": "#FA8072",
-        },
-      },
-      {
-        selector: 'node.bsp[voltage="33"]',
-        css: {
-          "background-color": "#D7D9AE",
-        },
-      },
-      {
-        selector: 'node.bsp[voltage="11"]',
-        css: {
-          "background-color": "#FFBF00",
         },
       },
       {
