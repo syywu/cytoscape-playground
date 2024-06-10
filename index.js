@@ -3,14 +3,17 @@ function getJsonFileName() {
 }
 
 async function getJsonData() {
-  let json = await constructFilteredJson(["Beddington 132kV GSP"]);
+  let json = await constructFilteredJson([
+    "Beddington 132kV GSP",
+    "Bolney 132kV GSP",
+  ]);
   console.log(json.edges, "json");
   return json;
 }
 
 async function fetchJSONData() {
   try {
-    const res = await fetch("./ukpn-south-eastern.json");
+    const res = await fetch("./ukpn-south-eastern-graph.json");
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);
     }
@@ -22,12 +25,14 @@ async function fetchJSONData() {
 }
 
 async function getGspNames() {
-  const gspNames = [];
+  const gspNames = new Set();
   const json = await fetchJSONData();
-  for (node of json.nodes) {
-    if (node.classes === "gsp") {
-      gspNames.push(node.data.label);
-    }
+  for (let node of json.nodes) {
+    gspNames.add(node.data.gspArea);
+  }
+
+  for (let edge of json.edges) {
+    gspNames.add(edge.data.gspArea);
   }
   return gspNames;
 }
@@ -93,14 +98,50 @@ $.getJSON(getJsonFileName(), function (data) {
         },
       },
       {
+        selector: 'node.gsp[voltage="132"]',
+        css: {
+          "background-color": "#FA8072",
+        },
+      },
+      {
+        selector: 'node.gsp[voltage="33"]',
+        css: {
+          "background-color": "#D7D9AE",
+        },
+      },
+      {
+        selector: 'node.gsp[voltage="11"]',
+        css: {
+          "background-color": "#FFBF00",
+        },
+      },
+      {
         selector: "node.bsp",
         css: {
           shape: "round-rectangle",
-          "background-color": "#D7D9AE",
+          "background-color": "#ADD8E6",
           "corner-radius": "50",
           padding: 20,
           width: 70,
           height: 70,
+        },
+      },
+      {
+        selector: 'node.bsp[voltage="132"]',
+        css: {
+          "background-color": "#FA8072",
+        },
+      },
+      {
+        selector: 'node.bsp[voltage="33"]',
+        css: {
+          "background-color": "#D7D9AE",
+        },
+      },
+      {
+        selector: 'node.bsp[voltage="11"]',
+        css: {
+          "background-color": "#FFBF00",
         },
       },
       {
@@ -145,12 +186,30 @@ $.getJSON(getJsonFileName(), function (data) {
         style: {
           width: 3,
           "line-style": "dashed",
+          "line-color": function (ele) {
+            return ele.data("operatingVoltage") == "132 kV"
+              ? "#C70039"
+              : ele.data("operatingVoltage") == "33 kV"
+              ? "#FF7F50"
+              : ele.data("operatingVoltage") == "11 kV"
+              ? "#008000"
+              : "black";
+          },
         },
       },
       {
         selector: 'edge[type="Overhead"]',
         style: {
-          "line-color": "black",
+          width: 5,
+          "line-color": function (ele) {
+            return ele.data("operatingVoltage") == "132 kV"
+              ? "#C70039"
+              : ele.data("operatingVoltage") == "33 kV"
+              ? "#FF7F50"
+              : ele.data("operatingVoltage") == "11 kV"
+              ? "#008000"
+              : "black";
+          },
         },
       },
       {
