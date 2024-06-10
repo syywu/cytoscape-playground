@@ -3,7 +3,7 @@ function getJsonFileName() {
 }
 
 async function getJsonData() {
-  let json = await constructFilteredJson(["West Weybridge", "Beddington"]);
+  let json = await constructFilteredJson(["West Weybridge 132kV(NEW) GSP"]);
   console.log(json.edges, "json");
   return json;
 }
@@ -15,7 +15,6 @@ async function fetchJSONData() {
       throw new Error(`HTTP error! Status: ${res.status}`);
     }
     const data = await res.json();
-    console.log(data);
     return data;
   } catch (error) {
     console.error("Unable to fetch data:", error);
@@ -124,11 +123,11 @@ $.getJSON(getJsonFileName(), function (data) {
         },
       },
       {
-        selector: "edge[label]",
+        selector: "edge",
         style: {
           content: function (ele) {
             return (
-              ele.data("label") +
+              ele.data("operatingVoltage") +
               " - " +
               ele.data("winterRating") +
               " - " +
