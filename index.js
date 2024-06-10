@@ -3,7 +3,7 @@ function getJsonFileName() {
 }
 
 async function getJsonData() {
-  let json = await constructFilteredJson(["West Weybridge 132kV(NEW) GSP"]);
+  let json = await constructFilteredJson(["Beddington 132kV GSP"]);
   console.log(json.edges, "json");
   return json;
 }
@@ -138,6 +138,19 @@ $.getJSON(getJsonFileName(), function (data) {
           "text-background-opacity": 1,
           "text-background-color": "white",
           "text-background-padding": "3px",
+        },
+      },
+      {
+        selector: 'edge[type="Underground"]',
+        style: {
+          width: 3,
+          "line-style": "dashed",
+        },
+      },
+      {
+        selector: 'edge[type="Overhead"]',
+        style: {
+          "line-color": "black",
         },
       },
       {
