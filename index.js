@@ -110,13 +110,19 @@ $.getJSON(getJsonFileName(), function (data) {
         css: {
           shape: "round-rectangle",
           "background-color": function (ele) {
-            return ele.data("voltage") == "132"
-              ? "#FA8072"
+            return ele.data("voltage") == "400"
+              ? "#89CFF0"
+              : ele.data("voltage") == "275"
+              ? "#FF474D"
+              : ele.data("voltage") == "132"
+              ? "#475c6c"
+              : ele.data("voltage") == "66"
+              ? "#9FE2BF"
               : ele.data("voltage") == "33"
-              ? "#D7D9AE"
+              ? "#FFD580"
               : ele.data("voltage") == "11"
-              ? "#FFBF00"
-              : "#ADD8E6";
+              ? "#fffd8d"
+              : "#d3d3d3";
           },
           "corner-radius": "50",
           padding: 20,
@@ -164,31 +170,38 @@ $.getJSON(getJsonFileName(), function (data) {
       {
         selector: 'edge[type="Underground"]',
         style: {
-          width: 3,
           "line-style": "dashed",
           "line-color": function (ele) {
-            return ele.data("operatingVoltage") == "132 kV"
+            return ele.data("operatingVoltage") == "400 kV"
+              ? "##00308F"
+              : ele.data("operatingVoltage") == "275 kV"
               ? "#C70039"
+              : ele.data("operatingVoltage") == "132 kV"
+              ? "#000000"
+              : ele.data("operatingVoltage") == "66 kV"
+              ? "#008000"
               : ele.data("operatingVoltage") == "33 kV"
               ? "#FF7F50"
-              : ele.data("operatingVoltage") == "11 kV"
-              ? "#008000"
-              : "black";
+              : "#808080";
           },
         },
       },
       {
         selector: 'edge[type="Overhead"]',
         style: {
-          width: 5,
+          width: 4,
           "line-color": function (ele) {
-            return ele.data("operatingVoltage") == "132 kV"
+            return ele.data("operatingVoltage") == "400 kV"
+              ? "##00308F"
+              : ele.data("operatingVoltage") == "275 kV"
               ? "#C70039"
+              : ele.data("operatingVoltage") == "132 kV"
+              ? "#000000"
+              : ele.data("operatingVoltage") == "66 kV"
+              ? "#008000"
               : ele.data("operatingVoltage") == "33 kV"
               ? "#FF7F50"
-              : ele.data("operatingVoltage") == "11 kV"
-              ? "#008000"
-              : "black";
+              : "#808080";
           },
         },
       },
