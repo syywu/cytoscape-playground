@@ -71,7 +71,7 @@ $.getJSON(getJsonFileName(), function (data) {
         selector: "node[label]",
         style: {
           content: "data(label)",
-          shape: "diamond",
+          shape: "ellipse",
           width: 20,
           height: 20,
           "background-color": "grey",
@@ -208,10 +208,10 @@ $.getJSON(getJsonFileName(), function (data) {
       {
         selector: "node.tjunction",
         style: {
-          shape: "ellipse",
+          shape: "diamond",
           "background-color": "black",
-          width: 10,
-          height: 10,
+          width: 20,
+          height: 20,
         },
       },
     ],
