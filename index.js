@@ -5,7 +5,17 @@ function getJsonFileName() {
 async function getJsonData() {
   let json = await constructFilteredJson([
     "Beddington 132kV GSP",
-    "Bolney 132kV GSP",
+    // "Bolney 132kV GSP",
+    // "Canterbury North 132kV GSP",
+    // "Chessington 132kV GSP",
+    // "Kemsley 132kV GSP",
+    // "Kingsnorth Grid 132kV GSP",
+    // "Laleham 132kV GSP",
+    // "Littlebrook GIS 132kV GSP",
+    // "Ninfield 132kV GSP",
+    // "Northfleet East 132kV GSP",
+    // "Sellindge 132kV GSP",
+    "West Weybridge 132kV(NEW) GSP",
   ]);
   console.log(json.edges, "json");
   return json;
@@ -91,17 +101,14 @@ $.getJSON(getJsonFileName(), function (data) {
         css: {
           "text-valign": "top",
           "text-halign": "center",
-          shape: "round-rectangle",
+          shape: "rectangle",
           "background-color": function (ele) {
             return ele.data("voltage") == "132"
               ? "#FA8072"
               : ele.data("voltage") == "33"
               ? "#D7D9AE"
-              : ele.data("voltage") == "11"
-              ? "#FFBF00"
-              : "#ADD8E6";
+              : "#FFBF00";
           },
-          "corner-radius": "0",
           padding: 50,
         },
       },
@@ -120,14 +127,20 @@ $.getJSON(getJsonFileName(), function (data) {
               ? "#9FE2BF"
               : ele.data("voltage") == "33"
               ? "#FFD580"
-              : ele.data("voltage") == "11"
-              ? "#fffd8d"
-              : "#d3d3d3";
+              : "#fffd8d";
           },
           "corner-radius": "50",
           padding: 20,
           width: 70,
           height: 70,
+        },
+      },
+      {
+        selector: "node.switch",
+        css: {
+          shape: "round-rectangle",
+          "background-color": "#d3d3d3",
+          "corner-radius": "15",
         },
       },
       {
