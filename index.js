@@ -1,5 +1,5 @@
 function getJsonFileName() {
-  return "graph.json";
+  return "ukpn-london-graph.json";
 }
 
 async function getJsonData() {
@@ -229,13 +229,46 @@ $.getJSON(getJsonFileName(), function (data) {
       },
     ],
 
-    elements: getJsonData(),
+    // elements: getJsonData(),
+    elements: data,
 
     layout: {
       name: "fcose",
       padding: 5,
     },
   }));
+
+  function makePopper(ele) {
+    let ref = ele.popperRef(); // used only for positioning
+
+    ele.tippy = tippy(ref, {
+      // tippy options:
+      content: () => {
+        let content = document.createElement("div");
+
+        if (ele.isEdge()) {
+          content.innerHTML = ele.json().data.lineName;
+        } else {
+          content.innerHTML = ele.json().data.label;
+        }
+
+        return content;
+      },
+      trigger: "manual", // probably want manual mode
+    });
+  }
+
+  cy.ready(function () {
+    cy.elements().forEach(function (ele) {
+      makePopper(ele);
+    });
+  });
+
+  cy.elements().unbind("mouseover");
+  cy.elements().bind("mouseover", (event) => event.target.tippy.show());
+
+  cy.elements().unbind("mouseout");
+  cy.elements().bind("mouseout", (event) => event.target.tippy.hide());
 
   var eh = cy.edgehandles({ snap: false });
 
