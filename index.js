@@ -1,5 +1,5 @@
 function getJsonFileName() {
-  return "ukpn-london-graph.json";
+  return "ukpn-eastern-graph.json";
 }
 
 async function getJsonData() {
@@ -148,7 +148,7 @@ $.getJSON(getJsonFileName(), function (data) {
         style: {
           width: 2,
           "line-color": "grey",
-          "curve-style": "bezier",
+          "curve-style": "haystack",
         },
       },
       {
