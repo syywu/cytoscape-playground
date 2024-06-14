@@ -249,12 +249,17 @@ $.getJSON(getJsonFileName(), function (data) {
         if (ele.isEdge()) {
           content.innerHTML = ele.json().data.lineName;
         } else {
-          content.innerHTML = ele.json().data.label;
+          let demand = ele.json().data.currentDemand;
+          if (demand) {
+            content.innerHTML = demand;
+          } else {
+            content.innerHTML = ele.json().data.label;
+          }
         }
 
         return content;
       },
-      trigger: "manual", // probably want manual mode
+      trigger: "manual",
     });
   }
 
