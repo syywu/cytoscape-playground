@@ -4,7 +4,7 @@ function getJsonFileName() {
 
 async function getJsonData() {
   let json = await constructFilteredJson([
-    "Beddington 132kV GSP",
+    // "Beddington 132kV GSP",
     // "Bolney 132kV GSP",
     // "Canterbury North 132kV GSP",
     // "Chessington 132kV GSP",
@@ -15,7 +15,50 @@ async function getJsonData() {
     // "Ninfield 132kV GSP",
     // "Northfleet East 132kV GSP",
     // "Sellindge 132kV GSP",
-    "West Weybridge 132kV(NEW) GSP",
+    // "West Weybridge 132kV(NEW) GSP",
+    // "Barking C 132kV GSP",
+    // "Barking West 33kV GSP",
+    // "Beddington 132kV GSP",
+    // "Brimsdown 132kV GSP",
+    // "Chessington 132kV GSP",
+    // "City Road 132kV GSP",
+    // "Hackney Supergrid 132 kV GSP",
+    // "Hackney Sgrid 66kV GSP",
+    // "Hurst 132kV GSP",
+    // "Littlebrook GIS 132kV GSP",
+    // "Lodge Rd B 66kV GSP",
+    // "New Cross 132kV GSP",
+    // "NEW CROSS SGRID 66KV GSP",
+    // "Redbridge Supergrid 33kV GSP",
+    // "St Johns Wood 132kV GSP",
+    // "West Ham Sgrid 132kV GSP",
+    // "Willesden Grid 132kV GSP",
+    // "Willesden Grid 66kV GSP",
+    // "Wimbledon Sec 1&2 132kV GSP",
+    // "Wimbledon Grid 3&4 132kV GSP",
+    // "Amersham 132kV GSP",
+    // "Barking Grid 132kV GSP",
+    // "Braintree 132kV GSP",
+    // "Bramford Grid 132kV GSP",
+    // "Brimsdown 132kV GSP",
+    // "Burwell Main Grid 132kV GSP",
+    // "Eaton Socon Grid 132kV GSP",
+    // "Elstree 132kV GSP",
+    // "Stanmore Grid 132kV GSP",
+    // "Grendon 132kV GSP",
+    // "Mill Hill 132kV GSP",
+    // "Norwich Main 132kV GSP",
+    // "Pelham 132kV GSP",
+    // "Rayleigh Main 132kV GSP",
+    // "Rye House 132kV GSP",
+    // "Sundon 132kV GSP",
+    // "Tilbury 132kV GSP",
+    // "Tottenham 132kV GSP",
+    // "Walpole 132kV GSP",
+    // "Warley Grid 132kV GSP",
+    // "Watford South 132kV GSP",
+    // "Willesden Grid 132kV GSP",
+    // "Wymondley Main 132kV GSP",
   ]);
   console.log(json.edges, "json");
   return json;
@@ -23,7 +66,7 @@ async function getJsonData() {
 
 async function fetchJSONData() {
   try {
-    const res = await fetch("./ukpn-south-eastern-graph.json");
+    const res = await fetch("./ukpn.json");
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);
     }
@@ -55,14 +98,36 @@ async function constructFilteredJson(selectedGspNames) {
   const json = await fetchJSONData();
   if (json && json.nodes && json.edges) {
     for (node of json.nodes) {
-      if (node.data.gspArea && selectedGspNames.includes(node.data.gspArea)) {
-        filteredJson["nodes"].push(node);
+      let gspArea = node.data.gspArea;
+      if (gspArea) {
+        if (gspArea.length > 1) {
+          for (let i = 0; i < gspArea.length; i++) {
+            if (selectedGspNames.includes(gspArea[i])) {
+              filteredJson["nodes"].push(node);
+            }
+          }
+        } else {
+          if (selectedGspNames.includes(gspArea[0])) {
+            filteredJson["nodes"].push(node);
+          }
+        }
       }
     }
 
     for (edge of json.edges) {
-      if (edge.data.gspArea && selectedGspNames.includes(edge.data.gspArea)) {
-        filteredJson["edges"].push(edge);
+      let gspArea = edge.data.gspArea;
+      if (gspArea) {
+        if (gspArea.length > 1) {
+          for (let i = 0; i < gspArea.length; i++) {
+            if (selectedGspNames.includes(gspArea[i])) {
+              filteredJson["nodes"].push(edge);
+            }
+          }
+        } else {
+          if (selectedGspNames.includes(gspArea[0])) {
+            filteredJson["edges"].push(edge);
+          }
+        }
       }
     }
   }
@@ -70,7 +135,8 @@ async function constructFilteredJson(selectedGspNames) {
   return filteredJson;
 }
 
-$.getJSON(getJsonFileName(), function (data) {
+document.addEventListener("DOMContentLoaded", async function () {
+  const jsonData = await getJsonData();
   var cy = (window.cy = cytoscape({
     container: document.getElementById("cy"),
 
@@ -139,7 +205,19 @@ $.getJSON(getJsonFileName(), function (data) {
         selector: "node.switch",
         css: {
           shape: "round-rectangle",
-          "background-color": "#d3d3d3",
+          "background-color": function (ele) {
+            return ele.data("voltage") == "400"
+              ? "#89CFF0"
+              : ele.data("voltage") == "275"
+              ? "#FF474D"
+              : ele.data("voltage") == "132"
+              ? "#475c6c"
+              : ele.data("voltage") == "66"
+              ? "#9FE2BF"
+              : ele.data("voltage") == "33"
+              ? "#FFD580"
+              : "#fffd8d";
+          },
           "corner-radius": "15",
         },
       },
@@ -166,13 +244,17 @@ $.getJSON(getJsonFileName(), function (data) {
         selector: "edge",
         style: {
           content: function (ele) {
-            return (
-              ele.data("operatingVoltage") +
-              " - " +
-              ele.data("winterRating") +
-              " - " +
-              ele.data("circuitLength")
-            );
+            const operatingVoltage = ele.data("operatingVoltage");
+            const winterRating = ele.data("winterRating");
+            const circuitLength = ele.data("circuitLength");
+
+            if (operatingVoltage || winterRating || circuitLength) {
+              return [operatingVoltage, winterRating, circuitLength]
+                .filter(Boolean)
+                .join(" - ");
+            } else {
+              return "";
+            }
           },
           "font-size": "12px",
           "text-background-opacity": 1,
@@ -229,8 +311,7 @@ $.getJSON(getJsonFileName(), function (data) {
       },
     ],
 
-    // elements: getJsonData(),
-    elements: data,
+    elements: jsonData,
 
     layout: {
       name: "fcose",
@@ -252,8 +333,10 @@ $.getJSON(getJsonFileName(), function (data) {
           let demand = ele.json().data.currentDemand;
           if (demand) {
             content.innerHTML = demand;
-          } else {
+          } else if (label) {
             content.innerHTML = ele.json().data.label;
+          } else {
+            content.innerHTML = "No data found";
           }
         }
 
