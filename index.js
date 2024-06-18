@@ -174,22 +174,7 @@ document.addEventListener("DOMContentLoaded", async function () {
           "text-valign": "top",
           "text-halign": "center",
           shape: "rectangle",
-          // blue, red, black, green, yellow
-          "background-color": function (ele) {
-            return ele.data("voltage") == "400"
-              ? "#89CFF0"
-              : ele.data("voltage") == "275"
-              ? "#FF474D"
-              : ele.data("voltage") == "132"
-              ? "#475c6c"
-              : ele.data("voltage") == "66"
-              ? "#9FE2BF"
-              : ele.data("voltage") == "33"
-              ? "#FFD580"
-              : ele.data("voltage") == "11"
-              ? "#FFC0CB"
-              : "#B2BEB5";
-          },
+          "background-color": "#90EE90",
           padding: 50,
         },
       },
@@ -197,21 +182,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         selector: "node.bsp",
         css: {
           shape: "round-rectangle",
-          "background-color": function (ele) {
-            return ele.data("voltage") == "400"
-              ? "#89CFF0"
-              : ele.data("voltage") == "275"
-              ? "#FF474D"
-              : ele.data("voltage") == "132"
-              ? "#475c6c"
-              : ele.data("voltage") == "66"
-              ? "#9FE2BF"
-              : ele.data("voltage") == "33"
-              ? "#FFD580"
-              : ele.data("voltage") == "11"
-              ? "#FFC0CB"
-              : "#B2BEB5";
-          },
+          "background-color": "#0A5C36",
           "corner-radius": "50",
           padding: 20,
           width: 70,
@@ -222,21 +193,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         selector: "node.switch",
         css: {
           shape: "round-rectangle",
-          "background-color": function (ele) {
-            return ele.data("voltage") == "400"
-              ? "#89CFF0"
-              : ele.data("voltage") == "275"
-              ? "#FF474D"
-              : ele.data("voltage") == "132"
-              ? "#475c6c"
-              : ele.data("voltage") == "66"
-              ? "#9FE2BF"
-              : ele.data("voltage") == "33"
-              ? "#FFD580"
-              : ele.data("voltage") == "11"
-              ? "#FFC0CB"
-              : "#B2BEB5";
-          },
+          "background-color": "#B2BEB5",
           "corner-radius": "15",
         },
       },
