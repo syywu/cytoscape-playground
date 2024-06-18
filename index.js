@@ -2,64 +2,66 @@ function getJsonFileName() {
   return "ukpn-eastern-graph.json";
 }
 
+var allGspNames = [
+  "Beddington 132kV GSP",
+  "Bolney 132kV GSP",
+  "Canterbury North 132kV GSP",
+  "Chessington 132kV GSP",
+  "Kemsley 132kV GSP",
+  "Kingsnorth Grid 132kV GSP",
+  "Laleham 132kV GSP",
+  "Littlebrook GIS 132kV GSP",
+  "Ninfield 132kV GSP",
+  "Northfleet East 132kV GSP",
+  "Sellindge 132kV GSP",
+  "West Weybridge 132kV(NEW) GSP",
+  "Barking C 132kV GSP",
+  "Barking West 33kV GSP",
+  "Beddington 132kV GSP",
+  "Brimsdown 132kV GSP",
+  "Chessington 132kV GSP",
+  "City Road 132kV GSP",
+  "Hackney Supergrid 132 kV GSP",
+  "Hackney Sgrid 66kV GSP",
+  "Hurst 132kV GSP",
+  "Littlebrook GIS 132kV GSP",
+  "Lodge Rd B 66kV GSP",
+  "New Cross 132kV GSP",
+  "NEW CROSS SGRID 66KV GSP",
+  "Redbridge Supergrid 33kV GSP",
+  "St Johns Wood 132kV GSP",
+  "West Ham Sgrid 132kV GSP",
+  "Willesden Grid 132kV GSP",
+  "Willesden Grid 66kV GSP",
+  "Wimbledon Sec 1&2 132kV GSP",
+  "Wimbledon Grid 3&4 132kV GSP",
+  "Amersham 132kV GSP",
+  "Barking Grid 132kV GSP",
+  "Braintree 132kV GSP",
+  "Bramford Grid 132kV GSP",
+  "Brimsdown 132kV GSP",
+  "Burwell Main Grid 132kV GSP",
+  "Eaton Socon Grid 132kV GSP",
+  "Elstree 132kV GSP",
+  "Stanmore Grid 132kV GSP",
+  "Grendon 132kV GSP",
+  "Mill Hill 132kV GSP",
+  "Norwich Main 132kV GSP",
+  "Pelham 132kV GSP",
+  "Rayleigh Main 132kV GSP",
+  "Rye House 132kV GSP",
+  "Sundon 132kV GSP",
+  "Tilbury 132kV GSP",
+  "Tottenham 132kV GSP",
+  "Walpole 132kV GSP",
+  "Warley Grid 132kV GSP",
+  "Watford South 132kV GSP",
+  "Willesden Grid 132kV GSP",
+  "Wymondley Main 132kV GSP",
+];
+
 async function getJsonData() {
-  let json = await constructFilteredJson([
-    // "Beddington 132kV GSP",
-    // "Bolney 132kV GSP",
-    // "Canterbury North 132kV GSP",
-    // "Chessington 132kV GSP",
-    // "Kemsley 132kV GSP",
-    // "Kingsnorth Grid 132kV GSP",
-    // "Laleham 132kV GSP",
-    // "Littlebrook GIS 132kV GSP",
-    // "Ninfield 132kV GSP",
-    // "Northfleet East 132kV GSP",
-    // "Sellindge 132kV GSP",
-    // "West Weybridge 132kV(NEW) GSP",
-    // "Barking C 132kV GSP",
-    // "Barking West 33kV GSP",
-    // "Beddington 132kV GSP",
-    // "Brimsdown 132kV GSP",
-    // "Chessington 132kV GSP",
-    // "City Road 132kV GSP",
-    // "Hackney Supergrid 132 kV GSP",
-    // "Hackney Sgrid 66kV GSP",
-    // "Hurst 132kV GSP",
-    // "Littlebrook GIS 132kV GSP",
-    // "Lodge Rd B 66kV GSP",
-    // "New Cross 132kV GSP",
-    // "NEW CROSS SGRID 66KV GSP",
-    // "Redbridge Supergrid 33kV GSP",
-    // "St Johns Wood 132kV GSP",
-    // "West Ham Sgrid 132kV GSP",
-    // "Willesden Grid 132kV GSP",
-    // "Willesden Grid 66kV GSP",
-    // "Wimbledon Sec 1&2 132kV GSP",
-    // "Wimbledon Grid 3&4 132kV GSP",
-    // "Amersham 132kV GSP",
-    // "Barking Grid 132kV GSP",
-    // "Braintree 132kV GSP",
-    // "Bramford Grid 132kV GSP",
-    // "Brimsdown 132kV GSP",
-    // "Burwell Main Grid 132kV GSP",
-    // "Eaton Socon Grid 132kV GSP",
-    // "Elstree 132kV GSP",
-    // "Stanmore Grid 132kV GSP",
-    // "Grendon 132kV GSP",
-    // "Mill Hill 132kV GSP",
-    // "Norwich Main 132kV GSP",
-    // "Pelham 132kV GSP",
-    // "Rayleigh Main 132kV GSP",
-    // "Rye House 132kV GSP",
-    // "Sundon 132kV GSP",
-    // "Tilbury 132kV GSP",
-    // "Tottenham 132kV GSP",
-    // "Walpole 132kV GSP",
-    // "Warley Grid 132kV GSP",
-    // "Watford South 132kV GSP",
-    // "Willesden Grid 132kV GSP",
-    // "Wymondley Main 132kV GSP",
-  ]);
+  let json = await constructFilteredJson([]);
   console.log(json.edges, "json");
   return json;
 }
@@ -135,9 +137,13 @@ async function constructFilteredJson(selectedGspNames) {
   return filteredJson;
 }
 
+var searchedData;
+var cy;
+
 document.addEventListener("DOMContentLoaded", async function () {
-  const jsonData = await getJsonData();
-  var cy = (window.cy = cytoscape({
+  // const jsonData = await getJsonData();
+
+  cy = window.cy = cytoscape({
     container: document.getElementById("cy"),
 
     boxSelectionEnabled: false,
@@ -180,7 +186,9 @@ document.addEventListener("DOMContentLoaded", async function () {
               ? "#9FE2BF"
               : ele.data("voltage") == "33"
               ? "#FFD580"
-              : "#fffd8d";
+              : ele.data("voltage") == "11"
+              ? "#FFC0CB"
+              : "#B2BEB5";
           },
           padding: 50,
         },
@@ -200,7 +208,9 @@ document.addEventListener("DOMContentLoaded", async function () {
               ? "#9FE2BF"
               : ele.data("voltage") == "33"
               ? "#FFD580"
-              : "#fffd8d";
+              : ele.data("voltage") == "11"
+              ? "#FFC0CB"
+              : "#B2BEB5";
           },
           "corner-radius": "50",
           padding: 20,
@@ -223,7 +233,9 @@ document.addEventListener("DOMContentLoaded", async function () {
               ? "#9FE2BF"
               : ele.data("voltage") == "33"
               ? "#FFD580"
-              : "#fffd8d";
+              : ele.data("voltage") == "11"
+              ? "#FFC0CB"
+              : "#B2BEB5";
           },
           "corner-radius": "15",
         },
@@ -318,13 +330,13 @@ document.addEventListener("DOMContentLoaded", async function () {
       },
     ],
 
-    elements: jsonData,
+    elements: searchedData,
 
     layout: {
       name: "fcose",
       padding: 5,
     },
-  }));
+  });
 
   function makePopper(ele) {
     let ref = ele.popperRef(); // used only for positioning
@@ -364,6 +376,25 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   cy.elements().unbind("mouseout");
   cy.elements().bind("mouseout", (event) => event.target.tippy.hide());
+
+  var searchGsps = function () {
+    let form = document.getElementById("search-form");
+    form.style.display = "block";
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      let input = document.getElementById("label").value.split(", ");
+      searchedData = await constructFilteredJson(input);
+
+      cy.json({ elements: searchedData });
+      cy.layout({ name: "fcose", padding: 5 }).run();
+
+      document.getElementById("label").value = "";
+      form.style.display = "none";
+    });
+  };
+  document.querySelector("#filter").addEventListener("click", searchGsps);
 
   var eh = cy.edgehandles({ snap: false });
 
