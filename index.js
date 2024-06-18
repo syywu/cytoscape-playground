@@ -168,12 +168,19 @@ document.addEventListener("DOMContentLoaded", async function () {
           "text-valign": "top",
           "text-halign": "center",
           shape: "rectangle",
+          // blue, red, black, green, yellow
           "background-color": function (ele) {
-            return ele.data("voltage") == "132"
-              ? "#FA8072"
+            return ele.data("voltage") == "400"
+              ? "#89CFF0"
+              : ele.data("voltage") == "275"
+              ? "#FF474D"
+              : ele.data("voltage") == "132"
+              ? "#475c6c"
+              : ele.data("voltage") == "66"
+              ? "#9FE2BF"
               : ele.data("voltage") == "33"
-              ? "#D7D9AE"
-              : "#FFBF00";
+              ? "#FFD580"
+              : "#fffd8d";
           },
           padding: 50,
         },
