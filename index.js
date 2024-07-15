@@ -68,7 +68,7 @@ async function getJsonData() {
 
 async function fetchJSONData() {
   try {
-    const res = await fetch("./ukpn.json");
+    const res = await fetch("./ukpn-graph.json");
     if (!res.ok) {
       throw new Error(`HTTP error! Status: ${res.status}`);
     }
@@ -104,12 +104,12 @@ async function constructFilteredJson(selectedGspNames) {
       if (gspArea) {
         if (gspArea.length > 1) {
           for (let i = 0; i < gspArea.length; i++) {
-            if (selectedGspNames.includes(gspArea[i])) {
+            if (selectedGspNames.includes(gspArea[i].toLowerCase())) {
               filteredJson["nodes"].push(node);
             }
           }
         } else {
-          if (selectedGspNames.includes(gspArea[0])) {
+          if (selectedGspNames.includes(gspArea[0].toLowerCase())) {
             filteredJson["nodes"].push(node);
           }
         }
@@ -121,12 +121,12 @@ async function constructFilteredJson(selectedGspNames) {
       if (gspArea) {
         if (gspArea.length > 1) {
           for (let i = 0; i < gspArea.length; i++) {
-            if (selectedGspNames.includes(gspArea[i])) {
+            if (selectedGspNames.includes(gspArea[i].toLowerCase())) {
               filteredJson["nodes"].push(edge);
             }
           }
         } else {
-          if (selectedGspNames.includes(gspArea[0])) {
+          if (selectedGspNames.includes(gspArea[0].toLowerCase())) {
             filteredJson["edges"].push(edge);
           }
         }
@@ -341,7 +341,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      let input = document.getElementById("label").value.split(", ");
+      let input = document.getElementById("label").value.toLowerCase();
       searchedData = await constructFilteredJson(input);
 
       cy.json({ elements: searchedData });
